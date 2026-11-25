@@ -1,0 +1,2546 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>FWD Savvy Pension 90/9, 90/60 | จุดเริ่มต้นของชีวิตเกษียณที่คุณกำหนดได้เอง</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+    :root {
+        --fwd-orange: #FF6600;
+        --fwd-orange-dark: #E05200;
+        --fwd-orange-soft: #FFF4EC;
+        --fwd-orange-mid: #F8C6A0;
+        --fwd-orange-border: #FFD8BC;
+        --fwd-teal: #52C4A0;
+        --fwd-teal-soft: #ECFDF5;
+        --fwd-sky: #6EC1D6;
+        --fwd-sky-soft: #F0F9FF;
+        --fwd-dark: #1A1D21;
+        --fwd-slate: #4A5568;
+        --fwd-muted: #718096;
+        --fwd-green: #06C755;
+        --fwd-green-soft: #EBFBF1;
+        --fwd-bg: #F4F6F9;
+        --fwd-card: #FFFFFF;
+        --fwd-border: #E5E9F0;
+        --radius-lg: 20px;
+        --radius-md: 14px;
+        --shadow-sm: 0 4px 14px rgba(17, 24, 39, 0.05);
+        --shadow-md: 0 12px 28px rgba(17, 24, 39, 0.08);
+        --shadow-orange: 0 10px 24px rgba(255, 102, 0, 0.24);
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    body {
+        font-family: 'Prompt', sans-serif;
+        background-color: var(--fwd-bg);
+        margin: 0; padding: 0;
+        color: var(--fwd-dark);
+        line-height: 1.5;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+
+    #main-content { padding-bottom: 110px; }
+
+    /* ================= HERO BANNER ================= */
+    .hero-wrap {
+        max-width: 1140px;
+        margin: 18px auto 0;
+        padding: 0 18px;
+    }
+    .hero-card {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        background: linear-gradient(125deg, #FF6600 0%, #E85000 58%, #22262C 100%);
+        color: #fff;
+        box-shadow: var(--shadow-md);
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr;
+        min-height: 220px;
+    }
+    .hero-left {
+        padding: 26px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+    .fwd-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255,255,255,0.18);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(255,255,255,0.28);
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 600;
+        width: fit-content;
+        margin-bottom: 10px;
+    }
+    .hero-left h1 {
+        margin: 0;
+        font-size: 27px;
+        font-weight: 800;
+        line-height: 1.25;
+        letter-spacing: -0.3px;
+    }
+    .hero-subtitle {
+        margin: 6px 0 0;
+        font-size: 15px;
+        font-weight: 600;
+        color: #FFE6D4;
+    }
+    .hero-desc {
+        margin: 6px 0 0;
+        font-size: 13px;
+        color: rgba(255,255,255,0.9);
+        max-width: 560px;
+    }
+    .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+    }
+    .hero-badge {
+        background: rgba(255,255,255,0.16);
+        border: 1px solid rgba(255,255,255,0.24);
+        padding: 5px 11px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .hero-right {
+        position: relative;
+        overflow: hidden;
+        min-height: 190px;
+    }
+    .hero-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .hero-right::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(232,80,0,0.68) 0%, rgba(232,80,0,0.06) 45%, rgba(0,0,0,0.12) 100%);
+    }
+
+    /* ================= 5 PILLARS STRIP ================= */
+    .pillars-wrap {
+        max-width: 1140px;
+        margin: 14px auto 0;
+        padding: 0 18px;
+    }
+    .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
+    .pillar-item {
+        background: #fff;
+        border: 1px solid var(--fwd-border);
+        border-radius: 14px;
+        padding: 12px 12px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        box-shadow: var(--shadow-sm);
+    }
+    .pillar-icon {
+        width: 34px; height: 34px;
+        border-radius: 10px;
+        background: var(--fwd-orange-soft);
+        color: var(--fwd-orange);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 15px;
+        flex-shrink: 0;
+    }
+    .pillar-item.tax-pillar .pillar-icon {
+        background: var(--fwd-green-soft);
+        color: #059669;
+    }
+    .pillar-title { font-size: 12.5px; font-weight: 700; color: var(--fwd-dark); line-height: 1.25; }
+    .pillar-text { font-size: 11px; color: var(--fwd-muted); margin-top: 2px; line-height: 1.35; }
+
+    /* ================= MAIN GRID ================= */
+    .container {
+        max-width: 1140px;
+        margin: 18px auto 24px;
+        padding: 0 18px;
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 20px;
+        align-items: stretch;
+    }
+    .left-panel, .right-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .card {
+        background: var(--fwd-card);
+        border-radius: var(--radius-lg);
+        padding: 20px 22px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--fwd-border);
+        margin-bottom: 0;
+    }
+    .card-accent { border-top: 4px solid var(--fwd-orange); }
+    .card-grow { flex: 1; display: flex; flex-direction: column; }
+
+    .section-title {
+        font-size: 16.5px;
+        font-weight: 700;
+        margin: 0 0 14px;
+        color: var(--fwd-dark);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .section-title i { color: var(--fwd-orange); }
+
+    /* ================= FORM CONTROLS ================= */
+    .form-row-2 {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group:last-child { margin-bottom: 0; }
+    .form-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--fwd-slate);
+        margin-bottom: 6px;
+    }
+
+    .seg-group {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        background: #F1F4F8;
+        padding: 4px;
+        border-radius: 12px;
+        gap: 4px;
+    }
+    .seg-btn {
+        border: none;
+        background: transparent;
+        padding: 8px 6px;
+        border-radius: 9px;
+        font-family: 'Prompt', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--fwd-slate);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        white-space: nowrap;
+    }
+    .seg-btn.active {
+        background: var(--fwd-orange);
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 3px 10px rgba(255, 102, 0, 0.28);
+    }
+    .seg-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    input[type="number"], input[type="text"], select {
+        width: 100%;
+        padding: 9px 12px;
+        border: 1.5px solid var(--fwd-border);
+        border-radius: 11px;
+        font-family: 'Prompt', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        background: #FAFBFD;
+        color: var(--fwd-dark);
+        outline: none;
+        transition: border-color 0.2s, background 0.2s;
+    }
+    input[type="number"]:focus, input[type="text"]:focus, select:focus {
+        border-color: var(--fwd-orange);
+        background: #fff;
+    }
+
+    .dob-toggle {
+        background: none; border: none; color: var(--fwd-orange);
+        font-family: 'Prompt', sans-serif; font-size: 12px; font-weight: 600;
+        cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 4px;
+    }
+    .dob-drawer {
+        display: none; background: #FAFBFD; border: 1px dashed var(--fwd-orange-border);
+        border-radius: 12px; padding: 10px; margin-bottom: 14px;
+    }
+    .dob-drawer.open { display: block; }
+    .dob-grid { display: grid; grid-template-columns: 0.8fr 1fr 1.1fr; gap: 6px; }
+    .dob-grid select { font-size: 13px; padding: 8px 6px; font-weight: 500; }
+    .exact-age-txt { font-size: 12px; color: var(--fwd-orange); font-weight: 600; text-align: center; margin-top: 6px; }
+    .age-warning {
+        display: none; background: #FFF5F5; border: 1px solid #FEB2B2; color: #C53030;
+        font-size: 12px; font-weight: 500; padding: 8px 10px; border-radius: 10px;
+        margin-bottom: 12px; text-align: center;
+    }
+
+    /* ================= SUM / PREMIUM INPUT BOX ================= */
+    .sum-box {
+        background: linear-gradient(180deg, #FFF7F1 0%, #FFFDFB 100%);
+        border: 1px solid var(--fwd-orange-border);
+        border-radius: 14px;
+        padding: 13px 15px;
+    }
+    .mode-switch {
+        display: grid; grid-template-columns: 1fr 1fr;
+        background: rgba(255, 102, 0, 0.1); padding: 3px; border-radius: 10px;
+        gap: 4px; margin-bottom: 12px;
+    }
+    .mode-btn {
+        border: none; background: transparent; padding: 6px 8px; border-radius: 8px;
+        font-family: 'Prompt', sans-serif; font-size: 12px; font-weight: 600;
+        color: var(--fwd-orange-dark); cursor: pointer; transition: all 0.2s;
+        display: flex; align-items: center; justify-content: center; gap: 5px;
+    }
+    .mode-btn.active { background: #fff; color: var(--fwd-orange); box-shadow: 0 2px 6px rgba(255, 102, 0, 0.18); }
+
+    .input-currency-wrap { position: relative; display: flex; align-items: center; }
+    .input-currency-wrap input {
+        padding-right: 74px; font-size: 18px; font-weight: 700; color: var(--fwd-orange);
+        background: #fff; border: 1.5px solid var(--fwd-orange-border); text-align: right;
+    }
+    .input-unit-tag {
+        position: absolute; right: 12px; font-size: 12px; font-weight: 600;
+        color: var(--fwd-muted); pointer-events: none;
+    }
+    .budget-calc-note {
+        font-size: 12px; color: var(--fwd-slate); margin-top: 8px; background: #fff;
+        border: 1px dashed var(--fwd-orange-border); border-radius: 8px; padding: 6px 10px;
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .budget-calc-note strong { color: var(--fwd-orange); font-size: 13.5px; }
+    .min-sum-alert { display: none; font-size: 11.5px; color: #C53030; margin-top: 6px; text-align: center; font-weight: 500; }
+
+    input[type="range"] {
+        -webkit-appearance: none; width: 100%; height: 7px; background: #E2E8F0;
+        border-radius: 99px; outline: none; margin: 14px 0 12px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none; width: 34px; height: 34px; border-radius: 50%;
+        background-color: #fff; border: 2.5px solid var(--fwd-orange);
+        box-shadow: 0 3px 10px rgba(255, 102, 0, 0.3); cursor: pointer;
+        background-position: center; background-repeat: no-repeat; background-size: 20px;
+    }
+    input[type="range"].gender-m::-webkit-slider-thumb {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-size='19'%3E👨%3C/text%3E%3C/svg%3E");
+    }
+    input[type="range"].gender-f::-webkit-slider-thumb {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-size='19'%3E👩%3C/text%3E%3C/svg%3E");
+    }
+    .quick-sums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 10px; }
+    .quick-sums button {
+        padding: 7px 4px; border-radius: 8px; border: 1px solid var(--fwd-orange-border);
+        background: #fff; color: var(--fwd-dark); font-family: 'Prompt', sans-serif;
+        font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+    }
+    .quick-sums button:hover, .quick-sums button.active-sum {
+        background: var(--fwd-orange); border-color: var(--fwd-orange); color: #fff;
+    }
+
+    /* ================= TAX DEDUCTION CARD ================= */
+    .tax-card {
+        background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%);
+        border: 1px solid #B7F0CD;
+        border-radius: var(--radius-lg);
+        padding: 16px 18px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .tax-head {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 8px; margin-bottom: 10px;
+    }
+    .tax-title {
+        font-size: 14px; font-weight: 700; color: #065F46;
+        display: flex; align-items: center; gap: 6px;
+    }
+    .tax-badge {
+        background: #059669; color: #fff; font-size: 11px; font-weight: 700;
+        padding: 2px 9px; border-radius: 999px;
+    }
+    .tax-rates-row {
+        display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 10px;
+    }
+    .tax-rate-btn {
+        border: 1px solid #A7F3D0; background: #fff; color: #065F46;
+        padding: 5px 2px; border-radius: 8px; font-family: 'Prompt', sans-serif;
+        font-size: 11.5px; font-weight: 600; cursor: pointer; transition: all 0.18s;
+    }
+    .tax-rate-btn.active {
+        background: #059669; border-color: #059669; color: #fff;
+        box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+    }
+    .tax-result-grid {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    }
+    .tax-res-box {
+        background: #fff; border: 1px solid #D1FAE5; border-radius: 10px;
+        padding: 8px 10px; text-align: center;
+    }
+    .tax-res-lbl { font-size: 11px; color: var(--fwd-muted); }
+    .tax-res-val { font-size: 16px; font-weight: 800; color: #059669; }
+    .tax-note { font-size: 11px; color: var(--fwd-muted); margin-top: 8px; line-height: 1.4; }
+
+    /* ================= RIGHT PANEL: PLANS ================= */
+    .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .plan-card {
+        background: #fff; border: 2px solid var(--fwd-border); border-radius: 16px;
+        padding: 16px; cursor: pointer; transition: all 0.22s ease; position: relative;
+        display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .plan-card:hover:not(.disabled) { border-color: var(--fwd-orange-border); transform: translateY(-2px); }
+    .plan-card.active {
+        border-color: var(--fwd-orange);
+        background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%);
+        box-shadow: 0 8px 20px rgba(255, 102, 0, 0.14);
+    }
+    .plan-card.disabled { opacity: 0.48; cursor: not-allowed; filter: grayscale(0.8); }
+    .plan-tag {
+        display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700;
+        padding: 3px 9px; border-radius: 999px; width: fit-content; margin-bottom: 6px;
+    }
+    .tag-short { background: #FFF0E5; color: var(--fwd-orange-dark); }
+    .tag-long { background: #EBFBF1; color: #059669; }
+    .plan-card h3 { margin: 0; font-size: 16px; font-weight: 700; color: var(--fwd-dark); }
+    .plan-desc { margin: 4px 0 10px; font-size: 12px; color: var(--fwd-muted); line-height: 1.4; }
+    .plan-price-row {
+        border-top: 1px dashed var(--fwd-border); padding-top: 9px;
+        display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 4px;
+    }
+    .price-num { font-size: 23px; font-weight: 800; color: var(--fwd-orange); line-height: 1.1; }
+    .price-unit { font-size: 12px; color: var(--fwd-muted); font-weight: 500; }
+    .plan-check {
+        position: absolute; top: 12px; right: 12px; width: 22px; height: 22px; border-radius: 50%;
+        border: 2px solid var(--fwd-border); display: flex; align-items: center; justify-content: center;
+        font-size: 11px; color: transparent; transition: all 0.2s;
+    }
+    .plan-card.active .plan-check { background: var(--fwd-orange); border-color: var(--fwd-orange); color: #fff; }
+
+    /* ================= KPI & FWD BROCHURE INFOGRAPHIC DIAGRAM ================= */
+    .kpi-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+    .kpi-item {
+        background: #FAFBFD; border: 1px solid var(--fwd-border); border-radius: 14px;
+        padding: 11px 10px; text-align: center;
+    }
+    .kpi-item.kpi-orange { background: var(--fwd-orange-soft); border-color: var(--fwd-orange-border); }
+    .kpi-item.kpi-green { background: var(--fwd-green-soft); border-color: #B7F0CD; }
+    .kpi-label { font-size: 11px; color: var(--fwd-slate); font-weight: 500; }
+    .kpi-num { font-size: 18px; font-weight: 800; color: var(--fwd-dark); margin: 2px 0; }
+    .kpi-orange .kpi-num { color: var(--fwd-orange); }
+    .kpi-green .kpi-num { color: #059669; }
+    .kpi-sub { font-size: 11px; color: var(--fwd-muted); }
+
+    /* Visual Brochure-Style Infographic Box */
+    .fwd-diagram {
+        background: #FFFFFF;
+        border: 1px solid var(--fwd-border);
+        border-radius: 16px;
+        padding: 16px;
+        margin-bottom: 14px;
+    }
+    .diag-protect-row {
+        display: grid;
+        grid-template-columns: 0.95fr 1.25fr;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 14px;
+        font-size: 11.5px;
+        line-height: 1.45;
+    }
+    .diag-prot-pre {
+        background: #FAD1B2;
+        color: #5C2806;
+        padding: 10px 12px;
+    }
+    .diag-prot-post {
+        background: linear-gradient(135deg, #FF6600, #E65500);
+        color: #fff;
+        padding: 10px 12px;
+    }
+    .diag-prot-title { font-weight: 700; font-size: 12px; margin-bottom: 3px; display: flex; align-items: center; gap: 5px; }
+
+    /* Milestone Circles Timeline */
+    .diag-milestones {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        position: relative;
+        margin-bottom: 12px;
+    }
+    .diag-milestones::before {
+        content: "";
+        position: absolute;
+        top: 23px;
+        left: 12%;
+        right: 12%;
+        border-top: 2px dashed #FDBA74;
+        z-index: 0;
+    }
+    .ms-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+    .ms-age-circle {
+        width: 46px; height: 46px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid var(--fwd-orange);
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        font-size: 10.5px; font-weight: 700; color: var(--fwd-dark);
+        line-height: 1.15;
+        margin-bottom: 8px;
+        box-shadow: 0 2px 6px rgba(255, 102, 0, 0.12);
+    }
+    .ms-connector {
+        width: 2px; height: 10px; background: #CBD5E1; margin-top: -8px; margin-bottom: 4px;
+    }
+    .ms-pill {
+        width: 100%;
+        border-radius: 12px;
+        padding: 8px 6px;
+        color: #fff;
+    }
+    .ms-pill.pay { background: #E2E8F0; color: #1E293B; }
+    .ms-pill.t1 { background: linear-gradient(135deg, #FF7A1A, #FF6600); }
+    .ms-pill.t2 { background: linear-gradient(135deg, #4FD1A5, #2BB686); }
+    .ms-pill.t3 { background: linear-gradient(135deg, #6EC1D6, #3B9AB8); }
+    .ms-pct { font-size: 18px; font-weight: 800; line-height: 1.1; }
+    .ms-amt { font-size: 12px; font-weight: 700; margin-top: 2px; }
+    .ms-sub { font-size: 10px; opacity: 0.92; margin-top: 1px; }
+
+    /* ================= POLICY VALUE / PV15 SECTION (SPACIOUS 3x5 GRID) ================= */
+    .pv-section-wrap {
+        max-width: 1140px;
+        margin: 0 auto 24px;
+        padding: 0 18px;
+    }
+    .pv-accordion-card {
+        background: #fff;
+        border: 1px solid var(--fwd-border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+    }
+    .pv-header-btn {
+        width: 100%;
+        background: linear-gradient(90deg, #FFF7F1 0%, #FFFFFF 100%);
+        border: none;
+        padding: 16px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        cursor: pointer;
+        font-family: 'Prompt', sans-serif;
+        text-align: left;
+    }
+    .pv-header-left { display: flex; align-items: center; gap: 12px; }
+    .pv-header-icon {
+        width: 40px; height: 40px; border-radius: 12px;
+        background: var(--fwd-orange); color: #fff;
+        display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+    }
+    .pv-header-title { font-size: 15.5px; font-weight: 700; color: var(--fwd-dark); }
+    .pv-header-sub { font-size: 12px; color: var(--fwd-muted); }
+    .pv-chevron { color: var(--fwd-orange); font-size: 16px; transition: transform 0.25s; }
+    .pv-accordion-card.open .pv-chevron { transform: rotate(180deg); }
+
+    .pv-body {
+        display: none;
+        padding: 0 22px 22px;
+        border-top: 1px solid var(--fwd-border);
+    }
+    .pv-accordion-card.open .pv-body { display: block; }
+
+    .pv-info-banner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 14px 0;
+    }
+    .pv-info-box {
+        background: #FAFBFD;
+        border: 1px solid var(--fwd-border);
+        border-radius: 12px;
+        padding: 12px 14px;
+        font-size: 12px;
+        color: var(--fwd-slate);
+        line-height: 1.5;
+    }
+    .pv-info-box strong { color: var(--fwd-orange-dark); display: block; margin-bottom: 3px; font-size: 13px; }
+
+    /* Spacious 3-row x 5-installment PV tables (NO SLIDE, AIRY) */
+    .pv-split-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .pv-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        font-size: 12px;
+        text-align: center;
+        border: 1px solid #E2E8F0;
+    }
+    .pv-table th {
+        background: var(--fwd-orange);
+        color: #fff;
+        padding: 7px 6px;
+        border: 1px solid #E05200;
+        font-weight: 600;
+        line-height: 1.35;
+        font-size: 11.5px;
+    }
+    .pv-table th.col-lbl {
+        width: 22%;
+        text-align: left;
+        padding-left: 10px;
+        font-size: 11px;
+    }
+    .pv-table td {
+        padding: 7px 6px;
+        border: 1px solid #E5E9F0;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.45;
+        color: var(--fwd-slate);
+    }
+    .pv-table .row-label {
+        background: #FFF4EC;
+        color: var(--fwd-dark);
+        font-weight: 700;
+        text-align: left;
+        padding-left: 10px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+    .pv-table .row-baht td {
+        background: #F0FDF4;
+        color: #065F46;
+        font-weight: 700;
+        font-size: 12.5px;
+    }
+    .pv-table .row-baht .row-label {
+        background: #DCFCE7;
+        color: #065F46;
+        font-size: 11px;
+    }
+
+    /* Slightly tighter variant ONLY when displaying BOTH 90/9 and 90/60 together in Tab 3 */
+    .pv-dual-mode .pv-split-stack { gap: 6px; }
+    .pv-dual-mode .pv-table th { padding: 4px 5px; font-size: 10.5px; }
+    .pv-dual-mode .pv-table td { padding: 4px 5px; font-size: 11px; line-height: 1.3; }
+    .pv-dual-mode .pv-table .row-baht td { font-size: 11.5px; }
+    .pv-dual-mode .pv-table .row-label,
+    .pv-dual-mode .pv-table .row-baht .row-label { font-size: 10px; padding-left: 8px; }
+
+    /* CTA Button */
+    .cta-wrap { margin-top: auto; }
+    .cta-primary {
+        width: 100%;
+        padding: 15px 20px;
+        background: linear-gradient(135deg, var(--fwd-orange), var(--fwd-orange-dark));
+        color: #fff; border: none; border-radius: 14px;
+        font-family: 'Prompt', sans-serif; font-size: 15.5px; font-weight: 700;
+        cursor: pointer; box-shadow: var(--shadow-orange);
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(255, 102, 0, 0.32); }
+
+    /* ================= AGENT CARD ================= */
+    .agent-card {
+        background: #fff; border-radius: var(--radius-lg); padding: 15px 18px;
+        border: 1px solid var(--fwd-border); box-shadow: var(--shadow-sm);
+        display: flex; align-items: center; gap: 14px; margin-top: auto;
+    }
+    .agent-photo {
+        width: 68px; height: 68px; border-radius: 50%; object-fit: cover;
+        border: 3px solid var(--fwd-orange); flex-shrink: 0; background: #FFF4EC;
+    }
+    .agent-meta { flex: 1; min-width: 0; }
+    .agent-name { font-size: 15.5px; font-weight: 700; color: var(--fwd-dark); line-height: 1.25; }
+    .agent-role { font-size: 12px; font-weight: 600; color: var(--fwd-orange); }
+    .agent-lic { font-size: 11.5px; color: var(--fwd-muted); margin-top: 2px; }
+    .agent-actions { display: flex; gap: 8px; margin-top: 8px; }
+    .btn-mini {
+        display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px;
+        border-radius: 999px; font-size: 12px; font-weight: 600; text-decoration: none;
+        cursor: pointer; border: none; font-family: 'Prompt', sans-serif;
+    }
+    .btn-mini-call { background: var(--fwd-orange); color: #fff; }
+    .btn-mini-line { background: var(--fwd-green); color: #fff; }
+
+    /* ================= STICKY BAR ================= */
+    .sticky-bar {
+        position: fixed; bottom: 0; left: 0; width: 100%;
+        background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
+        border-top: 2px solid var(--fwd-orange); box-shadow: 0 -8px 24px rgba(0,0,0,0.08);
+        padding: 10px 16px; z-index: 900; transform: translateY(110%); transition: transform 0.3s ease;
+    }
+    .sticky-bar.show { transform: translateY(0); }
+    .sticky-inner {
+        max-width: 1140px; margin: 0 auto; display: flex; align-items: center;
+        justify-content: space-between; gap: 12px;
+    }
+    .stk-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .stk-gender-avatar {
+        width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center;
+        justify-content: center; font-size: 22px; flex-shrink: 0; border: 2px solid var(--fwd-orange);
+    }
+    .stk-gender-avatar.male { border-color: #2563EB; background: #EFF6FF; }
+    .stk-gender-avatar.female { border-color: #EC4899; background: #FDF2F8; }
+    .stk-meta { min-width: 0; }
+    .stk-plan-lbl { font-size: 12px; color: var(--fwd-slate); font-weight: 500; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .stk-gender-pill { display: inline-flex; align-items: center; gap: 4px; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+    .stk-gender-pill.male { background: #DBEAFE; color: #1D4ED8; }
+    .stk-gender-pill.female { background: #FCE7F3; color: #BE185D; }
+    .stk-price-val { font-size: 21px; font-weight: 800; color: var(--fwd-orange); line-height: 1.15; margin-top: 1px; }
+    .stk-btns { display: flex; gap: 8px; flex-shrink: 0; }
+    .stk-btn-quote {
+        background: var(--fwd-orange-soft); color: var(--fwd-orange-dark);
+        border: 1px solid var(--fwd-orange-border); padding: 10px 14px; border-radius: 11px;
+        font-family: 'Prompt', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer;
+        display: inline-flex; align-items: center; gap: 6px;
+    }
+    .stk-btn-line {
+        background: var(--fwd-green); color: #fff; border: none; padding: 10px 16px;
+        border-radius: 11px; font-family: 'Prompt', sans-serif; font-size: 13px; font-weight: 700;
+        cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+    }
+
+    /* ================= REPORT / A4 INFOGRAPHIC OVERLAY ================= */
+    #report-overlay {
+        display: none; position: fixed; inset: 0; background: #DDE3EB;
+        z-index: 9999; overflow-y: auto; padding: 16px 12px 60px;
+    }
+    .report-toolbar {
+        max-width: 820px; margin: 0 auto 14px; display: flex; align-items: center;
+        justify-content: space-between; flex-wrap: wrap; gap: 10px; background: #fff;
+        padding: 12px 16px; border-radius: 14px; box-shadow: var(--shadow-sm);
+        position: sticky; top: 8px; z-index: 50;
+    }
+    .report-mode-tabs { display: inline-flex; background: #F1F4F8; padding: 3px; border-radius: 10px; gap: 3px; flex-wrap: wrap; }
+    .mode-tab {
+        border: none; background: transparent; padding: 7px 11px; border-radius: 8px;
+        font-family: 'Prompt', sans-serif; font-size: 12px; font-weight: 600;
+        color: var(--fwd-slate); cursor: pointer;
+    }
+    .mode-tab.active { background: var(--fwd-orange); color: #fff; }
+    .toolbar-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-act {
+        padding: 8px 13px; border-radius: 10px; border: none; font-family: 'Prompt', sans-serif;
+        font-size: 13px; font-weight: 600; cursor: pointer; display: inline-flex;
+        align-items: center; gap: 6px; color: #fff; transition: opacity 0.2s;
+    }
+    .btn-act:disabled { opacity: 0.65; cursor: not-allowed; }
+    .btn-save { background: var(--fwd-green); }
+    .btn-pdf { background: #DC2626; }
+    .btn-print { background: var(--fwd-dark); }
+    .btn-close { background: #64748B; }
+
+    /* Standard report sheet */
+    .report-sheet {
+        max-width: 794px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 12px;
+        padding: 34px 36px;
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+    }
+
+    /* Exact A4 Single-Page Infographic Sheet (794 x 1123 px = 210 x 297 mm @ 96dpi) */
+    .report-sheet.a4-page {
+        width: 794px;
+        max-width: 794px;
+        min-height: 1123px;
+        padding: 34px 36px;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .a4-main-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .a4-bottom-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        margin-top: 14px;
+    }
+
+    .rpt-head {
+        display: flex; justify-content: space-between; align-items: center;
+        border-bottom: 3px solid var(--fwd-orange); padding-bottom: 10px; gap: 12px;
+    }
+    .rpt-head h1 { margin: 0; font-size: 20px; color: var(--fwd-orange); font-weight: 800; line-height: 1.25; }
+    .rpt-head-sub { font-size: 12.5px; color: var(--fwd-slate); margin-top: 2px; }
+    .rpt-brand-badge {
+        background: var(--fwd-orange); color: #fff; padding: 7px 14px; border-radius: 10px;
+        font-weight: 800; font-size: 17px; letter-spacing: 0.5px; flex-shrink: 0;
+    }
+    .rpt-logo-wrap { display: flex; align-items: center; justify-content: flex-end; flex-shrink: 0; }
+    .rpt-logo-img { height: 62px; width: auto; max-width: 145px; object-fit: contain; display: block; }
+
+    .info-grid {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 12px;
+        background: var(--fwd-orange-soft); border: 1px solid var(--fwd-orange-border);
+        border-radius: 12px; padding: 10px 14px;
+    }
+    .info-cell { font-size: 11.5px; color: var(--fwd-slate); line-height: 1.35; }
+    .info-cell strong { display: block; font-size: 13.5px; color: var(--fwd-dark); font-weight: 700; margin-top: 1px; }
+    .info-cell strong.hl { color: var(--fwd-orange); }
+
+    .summary-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .s-card { border-radius: 11px; padding: 10px 8px; text-align: center; }
+    .s-card.orange { background: linear-gradient(135deg, #FF6600, #E05200); color: #fff; }
+    .s-card.green { background: linear-gradient(135deg, #06C755, #059669); color: #fff; }
+    .s-card.dark { background: #1E242B; color: #fff; }
+    .s-card.tax { background: linear-gradient(135deg, #0D9488, #0F766E); color: #fff; }
+    .s-title { font-size: 10.5px; opacity: 0.94; }
+    .s-val { font-size: 16.5px; font-weight: 800; margin-top: 2px; line-height: 1.2; }
+    .s-sub { font-size: 9.5px; opacity: 0.88; margin-top: 2px; }
+
+    /* Infographic Brochure Visual inside Report */
+    .rpt-brochure-box {
+        border: 1px solid var(--fwd-border);
+        border-radius: 13px;
+        padding: 12px 14px;
+        background: #FFFDFB;
+    }
+    .rpt-brochure-title {
+        font-size: 13px; font-weight: 700; color: var(--fwd-dark);
+        margin-bottom: 9px; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    }
+    .a4-page .diag-protect-row { margin-bottom: 10px; font-size: 11px; line-height: 1.45; }
+    .a4-page .diag-prot-pre, .a4-page .diag-prot-post { padding: 8px 11px; }
+    .a4-page .diag-milestones { margin-bottom: 2px; gap: 8px; }
+    .a4-page .ms-age-circle { width: 42px; height: 42px; font-size: 10px; margin-bottom: 6px; }
+    .a4-page .ms-pill { padding: 7px 5px; border-radius: 10px; }
+    .a4-page .ms-pct { font-size: 16px; }
+    .a4-page .ms-amt { font-size: 11.5px; }
+    .a4-page .ms-sub { font-size: 9.5px; }
+
+    .rpt-pv-title {
+        font-size: 12.5px; font-weight: 700; color: var(--fwd-dark);
+        margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; gap: 6px;
+    }
+
+    .table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .report-table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: center; }
+    .report-table th { background: var(--fwd-orange); color: #fff; padding: 7px 6px; font-weight: 600; border: 1px solid #E05200; white-space: nowrap; }
+    .report-table td { padding: 6px 6px; border: 1px solid #E5E9F0; }
+    .phase-pay td { background: #FFFBF7; }
+    .phase-wait td { background: #FFFFFF; color: #64748B; }
+    .phase-ann1 td { background: #FFF7ED; }
+    .phase-ann2 td { background: #ECFDF5; }
+    .phase-ann3 td { background: #F0F9FF; font-weight: 600; }
+    .ann-val { color: #059669; font-weight: 700; }
+
+    .rpt-notes {
+        font-size: 10.5px; color: var(--fwd-muted); background: #F8FAFC;
+        border: 1px solid #EEF2F6; border-radius: 10px; padding: 10px 13px; line-height: 1.55;
+    }
+    .rpt-footer {
+        padding-top: 11px; border-top: 1.5px dashed #CBD5E1;
+        display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+    }
+    .rpt-agent-left { display: flex; align-items: center; gap: 11px; }
+    .rpt-agent-left img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--fwd-orange); }
+
+    .export-preview-box {
+        max-width: 820px; margin: 0 auto; background: #fff; border-radius: 16px;
+        padding: 20px; text-align: center; box-shadow: var(--shadow-md);
+    }
+    .export-tip {
+        background: #FFF8E1; color: #795548; border: 1px solid #FFE082;
+        border-radius: 10px; padding: 10px 14px; font-size: 13px; margin: 12px 0 16px;
+    }
+
+    /* ================= RESPONSIVE MOBILE ================= */
+    @media (max-width: 900px) {
+        .hero-wrap, .pillars-wrap, .container, .pv-section-wrap { padding: 0 12px; }
+        .hero-wrap { margin-top: 12px; }
+        .hero-card { grid-template-columns: 1fr; min-height: auto; }
+        .hero-right { display: none; }
+        .hero-left { padding: 16px 16px 18px; }
+        .hero-left h1 { font-size: 19px; }
+        .hero-subtitle { font-size: 13px; }
+        .hero-desc { display: none; }
+        .hero-badges { margin-top: 10px; gap: 6px; }
+        .hero-badge { font-size: 10.5px; padding: 4px 8px; }
+
+        .pillars-grid {
+            display: flex;
+            overflow-x: auto;
+            gap: 8px;
+            padding-bottom: 4px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .pillar-item {
+            min-width: 175px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            padding: 10px;
+        }
+
+        .container { grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
+        .left-panel, .right-panel { gap: 12px; }
+        .card { padding: 15px; border-radius: 16px; }
+        .section-title { font-size: 15px; margin-bottom: 10px; }
+
+        .plan-grid { gap: 8px; }
+        .plan-card { padding: 12px 10px; border-radius: 14px; }
+        .plan-card h3 { font-size: 14px; }
+        .plan-desc { font-size: 11px; margin: 3px 0 8px; }
+        .price-num { font-size: 18px; }
+        .price-unit { font-size: 10.5px; }
+        .plan-check { top: 8px; right: 8px; width: 18px; height: 18px; font-size: 9px; }
+
+        .kpi-strip { gap: 6px; margin-bottom: 12px; }
+        .kpi-item { padding: 9px 6px; border-radius: 11px; }
+        .kpi-label { font-size: 10px; }
+        .kpi-num { font-size: 14px; }
+        .kpi-sub { font-size: 9.5px; }
+
+        .fwd-diagram { padding: 12px 10px; }
+        .diag-protect-row { grid-template-columns: 1fr; font-size: 11px; }
+        .diag-milestones { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .diag-milestones::before { display: none; }
+        .ms-age-circle { width: 40px; height: 40px; font-size: 9.5px; margin-bottom: 5px; }
+        .ms-connector { display: none; }
+
+        .pv-info-banner { grid-template-columns: 1fr; gap: 8px; }
+        .pv-header-btn { padding: 13px 14px; }
+        .pv-body { padding: 0 12px 16px; }
+
+        /* Clean 5-column PV table on mobile */
+        .pv-split-stack { gap: 8px; }
+        .pv-table { font-size: 10px; }
+        .pv-table th { padding: 6px 2px; font-size: 9.5px; }
+        .pv-table th.col-lbl { width: 24%; padding-left: 5px; font-size: 9px; }
+        .pv-table td { padding: 6px 2px; line-height: 1.35; }
+        .pv-table .row-label { padding-left: 5px; font-size: 8.8px; }
+        .pv-table .row-baht td { font-size: 10.2px; }
+        .pv-table .row-baht .row-label { font-size: 8.8px; }
+
+        .seg-btn { font-size: 12px; padding: 8px 4px; }
+        .input-currency-wrap input { font-size: 16.5px; }
+
+        /* Mobile sticky bar */
+        .stk-gender-avatar { width: 38px; height: 38px; font-size: 19px; }
+        .stk-left { gap: 8px; }
+        .stk-plan-lbl { font-size: 11px; }
+        .stk-price-val { font-size: 17px; }
+        .stk-btn-quote span { display: none; }
+        .stk-btn-line { padding: 9px 12px; font-size: 12.5px; }
+
+        /* Mobile report preview */
+        .report-sheet, .report-sheet.a4-page {
+            width: 100%;
+            max-width: 100%;
+            min-height: auto;
+            padding: 16px 12px;
+            border-radius: 12px;
+        }
+        .rpt-head h1 { font-size: 16px; }
+        .rpt-brand-badge { font-size: 14px; padding: 6px 10px; }
+        .rpt-logo-img { height: 34px; max-width: 115px; }
+        .info-grid { grid-template-columns: repeat(2, 1fr); padding: 10px 10px; gap: 8px; }
+        .summary-cards { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+        .s-card { padding: 9px 6px; }
+        .s-title { font-size: 10px; }
+        .s-val { font-size: 14px; }
+        .report-toolbar { padding: 10px; }
+        .toolbar-actions { width: 100%; justify-content: space-between; }
+        .btn-act { flex: 1; justify-content: center; padding: 8px 6px; font-size: 12px; }
+    }
+
+    /* ================= EXACT A4 PRINT STYLES ================= */
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+    @media print {
+        html, body {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #fff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        #main-content, #sticky-bar, .report-toolbar { display: none !important; }
+        #report-overlay {
+            display: block !important;
+            position: static !important;
+            background: #fff !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: visible !important;
+        }
+        .report-sheet {
+            width: 210mm !important;
+            max-width: 210mm !important;
+            margin: 0 !important;
+            padding: 9.5mm 10.5mm !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+        .report-sheet.a4-page {
+            width: 210mm !important;
+            height: 297mm !important;
+            min-height: 297mm !important;
+            max-height: 297mm !important;
+            padding: 9.5mm 10.5mm !important;
+            overflow: hidden !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            page-break-after: avoid !important;
+            break-after: avoid !important;
+        }
+        .info-grid { grid-template-columns: repeat(3, 1fr) !important; }
+        .summary-cards { grid-template-columns: repeat(4, 1fr) !important; }
+        .diag-protect-row { grid-template-columns: 0.95fr 1.25fr !important; }
+        .diag-milestones { grid-template-columns: repeat(4, 1fr) !important; }
+        .pv-split-stack { gap: 9px !important; }
+        .pv-table { font-size: 11.5px !important; }
+        .pv-table th { padding: 6.5px 5px !important; font-size: 11px !important; }
+        .pv-table th.col-lbl { width: 22% !important; font-size: 10.5px !important; padding-left: 9px !important; }
+        .pv-table td { padding: 6.5px 5px !important; line-height: 1.4 !important; }
+        .pv-table .row-label { font-size: 10.5px !important; padding-left: 9px !important; }
+        .pv-table .row-baht td { font-size: 12px !important; }
+        .pv-table .row-baht .row-label { font-size: 10.5px !important; }
+    }
+</style>
+</head>
+<body>
+
+<div id="main-content">
+    <!-- HERO -->
+    <div class="hero-wrap">
+        <div class="hero-card">
+            <div class="hero-left">
+                <div class="fwd-pill"><i class="fa-solid fa-shield-heart"></i> FWD Savvy Pension • บำนาญแบบลดหย่อนได้</div>
+                <h1>เอฟดับบลิวดี แซฟวี เพนชัน 90/9, 90/60</h1>
+                <div class="hero-subtitle">จุดเริ่มต้นของชีวิตเกษียณที่คุณกำหนดได้เอง</div>
+                <p class="hero-desc">เตรียมพร้อมวัยเกษียณระยะยาวอย่างมั่นใจ ด้วยเงินบำนาญต่อเนื่องทุกปีถึงอายุ 90 ปี เพิ่มขึ้นแบบขั้นบันไดสู้ค่าครองชีพสูงสุด 28% ของทุนประกันภัย พร้อมสิทธิลดหย่อนภาษีสูงสุด 300,000 บาท/ปี</p>
+                <div class="hero-badges">
+                    <span class="hero-badge"><i class="fa-solid fa-arrow-trend-up"></i> บำนาญ 16% → 22% → 28%</span>
+                    <span class="hero-badge"><i class="fa-solid fa-coins"></i> รวมรับสูงสุด 688%</span>
+                    <span class="hero-badge"><i class="fa-solid fa-receipt"></i> ลดหย่อนภาษีสูงสุด 3 แสน</span>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="banner.jpg" alt="FWD Savvy Pension" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 KEY SELLING POINTS -->
+    <div class="pillars-wrap">
+        <div class="pillars-grid">
+            <div class="pillar-item">
+                <div class="pillar-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                <div>
+                    <div class="pillar-title">มั่นใจ หลังเกษียณ</div>
+                    <div class="pillar-text">รับเงินบำนาญต่อเนื่องทุกปี ตั้งแต่อายุ 60 ยาวถึง 90 ปี</div>
+                </div>
+            </div>
+            <div class="pillar-item">
+                <div class="pillar-icon"><i class="fa-solid fa-stairs"></i></div>
+                <div>
+                    <div class="pillar-title">มั่นคง บำนาญเพิ่มขึ้น</div>
+                    <div class="pillar-text">เริ่ม 16% เพิ่มเป็น 22% และสูงสุด 28% ของทุนประกันภัย</div>
+                </div>
+            </div>
+            <div class="pillar-item">
+                <div class="pillar-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div>
+                    <div class="pillar-title">อุ่นใจ ทั้งก่อน-หลังเกษียณ</div>
+                    <div class="pillar-text">คุ้มครอง 110% ก่อนอายุ 60 และการันตีบำนาญ 15 ปี</div>
+                </div>
+            </div>
+            <div class="pillar-item">
+                <div class="pillar-icon"><i class="fa-solid fa-wallet"></i></div>
+                <div>
+                    <div class="pillar-title">สบายใจ เลือกจ่ายได้</div>
+                    <div class="pillar-text">เลือกจ่ายสั้น 9 ปี หรือทยอยจ่ายสบายๆ ถึงอายุ 60 ปี</div>
+                </div>
+            </div>
+            <div class="pillar-item tax-pillar">
+                <div class="pillar-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <div>
+                    <div class="pillar-title">คุ้มค่า ลดหย่อนภาษีได้</div>
+                    <div class="pillar-text">ลดหย่อนภาษีได้สูงสุด 300,000 บาท/ปี ตามเกณฑ์สรรพากร</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- LEFT PANEL -->
+        <div class="left-panel">
+            <div class="card card-accent">
+                <h2 class="section-title"><i class="fa-solid fa-sliders"></i> ตั้งค่าคำนวณเบี้ยประกัน</h2>
+
+                <!-- Gender & Age -->
+                <div class="form-row-2">
+                    <div>
+                        <div class="form-label"><span>เพศ</span></div>
+                        <div class="seg-group">
+                            <button class="seg-btn active" id="m-btn" onclick="setGender('male')"><i class="fa-solid fa-mars"></i> ชาย</button>
+                            <button class="seg-btn" id="f-btn" onclick="setGender('female')"><i class="fa-solid fa-venus"></i> หญิง</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-label">
+                            <span>อายุ (ปี)</span>
+                            <button type="button" class="dob-toggle" onclick="toggleDOB()"><i class="fa-regular fa-calendar"></i> วันเกิด</button>
+                        </div>
+                        <input type="number" id="age-input" value="35" min="20" max="55" oninput="handleManualAge()" style="text-align:center;">
+                    </div>
+                </div>
+
+                <!-- Collapsible DOB -->
+                <div class="dob-drawer" id="dob-drawer">
+                    <div class="dob-grid">
+                        <select id="dob-day" onchange="calculateAgeFromDOB()"><option value="">วัน</option></select>
+                        <select id="dob-month" onchange="calculateAgeFromDOB()">
+                            <option value="">เดือน</option>
+                            <option value="1">ม.ค.</option><option value="2">ก.พ.</option>
+                            <option value="3">มี.ค.</option><option value="4">เม.ย.</option>
+                            <option value="5">พ.ค.</option><option value="6">มิ.ย.</option>
+                            <option value="7">ก.ค.</option><option value="8">ส.ค.</option>
+                            <option value="9">ก.ย.</option><option value="10">ต.ค.</option>
+                            <option value="11">พ.ย.</option><option value="12">ธ.ค.</option>
+                        </select>
+                        <select id="dob-year" onchange="calculateAgeFromDOB()"><option value="">พ.ศ.</option></select>
+                    </div>
+                    <div id="exact-age-display" class="exact-age-txt"></div>
+                </div>
+
+                <div id="age-warning" class="age-warning">
+                    <i class="fa-solid fa-circle-exclamation"></i> <span id="age-warning-txt">รับประกันอายุ 20 - 55 ปี</span>
+                </div>
+
+                <!-- Dual Input Mode -->
+                <div class="form-group">
+                    <div class="sum-box">
+                        <div class="mode-switch">
+                            <button type="button" class="mode-btn active" id="mode-sum-btn" onclick="setInputMode('sum')">
+                                <i class="fa-solid fa-shield"></i> กรอก/เลือกทุนประกัน
+                            </button>
+                            <button type="button" class="mode-btn" id="mode-prem-btn" onclick="setInputMode('prem')">
+                                <i class="fa-solid fa-baht-sign"></i> กรอกเบี้ยประกัน
+                            </button>
+                        </div>
+
+                        <!-- MODE A: SUM INSURED -->
+                        <div id="panel-mode-sum">
+                            <div class="input-currency-wrap">
+                                <input type="text" id="sum-text-input" inputmode="numeric" value="1,000,000" oninput="handleManualSumInput(this.value)" onblur="formatSumInputOnBlur()">
+                                <span class="input-unit-tag">บาท</span>
+                            </div>
+                            <input type="range" id="sum-slider" class="gender-m" min="100000" max="10000000" step="100000" value="1000000" oninput="handleSlider(this.value)">
+                            <div class="quick-sums" id="quick-sum-btns">
+                                <button type="button" onclick="setSum(300000)" data-sum="300000">3 แสน</button>
+                                <button type="button" onclick="setSum(500000)" data-sum="500000">5 แสน</button>
+                                <button type="button" onclick="setSum(1000000)" data-sum="1000000" class="active-sum">1 ล้าน</button>
+                                <button type="button" onclick="setSum(3000000)" data-sum="3000000">3 ล้าน</button>
+                            </div>
+                        </div>
+
+                        <!-- MODE B: TARGET PREMIUM -->
+                        <div id="panel-mode-prem" style="display:none;">
+                            <div class="input-currency-wrap">
+                                <input type="text" id="prem-text-input" inputmode="numeric" value="100,000" oninput="handleManualPremInput(this.value)" onblur="formatPremInputOnBlur()">
+                                <span class="input-unit-tag" id="prem-input-unit">บาท/ปี</span>
+                            </div>
+                            <div class="quick-sums" id="quick-prem-btns">
+                                <button type="button" onclick="setBudgetPremium(50000)" data-prem="50000">5 หมื่น</button>
+                                <button type="button" onclick="setBudgetPremium(100000)" data-prem="100000" class="active-sum">1 แสน</button>
+                                <button type="button" onclick="setBudgetPremium(200000)" data-prem="200000">2 แสน</button>
+                                <button type="button" onclick="setBudgetPremium(300000)" data-prem="300000">3 แสน</button>
+                            </div>
+                            <div class="budget-calc-note">
+                                <span>ทุนประกันภัยที่ได้ (แผน <span id="budget-plan-lbl">90/9</span>):</span>
+                                <strong><span id="budget-sum-result">311,526</span> บาท</strong>
+                            </div>
+                            <div id="min-sum-alert" class="min-sum-alert">
+                                <i class="fa-solid fa-circle-info"></i> ปรับเป็นทุนประกันภัยขั้นต่ำ 100,000 บาทตามเงื่อนไขบริษัทฯ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Mode -->
+                <div class="form-group">
+                    <div class="form-label"><span>งวดการชำระเบี้ย</span></div>
+                    <div class="seg-group">
+                        <button class="seg-btn active" id="p-year" onclick="setPeriod('year')">รายปี</button>
+                        <button class="seg-btn" id="p-half" onclick="setPeriod('half')">6 เดือน</button>
+                        <button class="seg-btn" id="p-quarter" onclick="setPeriod('quarter')">3 เดือน</button>
+                        <button class="seg-btn" id="p-month" onclick="setPeriod('month')">รายเดือน</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE TAX DEDUCTION ESTIMATOR -->
+            <div class="tax-card">
+                <div class="tax-head">
+                    <div class="tax-title"><i class="fa-solid fa-receipt"></i> คำนวณประหยัดภาษีต่อปี</div>
+                    <span class="tax-badge">ลดหย่อนได้สูงสุด 3 แสน</span>
+                </div>
+                <div style="font-size:11.5px; color:var(--fwd-slate); margin-bottom:6px;">เลือกฐานภาษีเงินได้บุคคลธรรมดาของคุณ:</div>
+                <div class="tax-rates-row" id="tax-rates-row">
+                    <button type="button" class="tax-rate-btn" onclick="setTaxRate(5)">5%</button>
+                    <button type="button" class="tax-rate-btn" onclick="setTaxRate(10)">10%</button>
+                    <button type="button" class="tax-rate-btn" onclick="setTaxRate(15)">15%</button>
+                    <button type="button" class="tax-rate-btn active" onclick="setTaxRate(20)">20%</button>
+                    <button type="button" class="tax-rate-btn" onclick="setTaxRate(25)">25%</button>
+                    <button type="button" class="tax-rate-btn" onclick="setTaxRate(30)">30%</button>
+                    <button type="button" class="tax-rate-btn" onclick="setTaxRate(35)">35%</button>
+                </div>
+                <div class="tax-result-grid">
+                    <div class="tax-res-box">
+                        <div class="tax-res-lbl">ประหยัดภาษี / ปี</div>
+                        <div class="tax-res-val" id="tax-save-yr">60,000 บ.</div>
+                    </div>
+                    <div class="tax-res-box">
+                        <div class="tax-res-lbl">ประหยัดรวม (<span id="tax-years-lbl">9</span> ปี)</div>
+                        <div class="tax-res-val" id="tax-save-total">540,000 บ.</div>
+                    </div>
+                </div>
+                <div class="tax-note">
+                    • คำนวณจากสิทธิ์ลดหย่อนเบี้ยบำนาญสูงสุด 300,000 บาท/ปี (กรณีไม่มีเบี้ยประกันชีวิตทั่วไปอื่น หรือสูงสุด 200,000 บาท และไม่เกิน 15% ของเงินได้พึงประเมินตามเกณฑ์กรมสรรพากร)
+                </div>
+            </div>
+
+            <!-- Agent Card -->
+            <div class="agent-card">
+                <img src="agent.jpg" id="main-agent-img" alt="นฤมล คำใบ" class="agent-photo">
+                <div class="agent-meta">
+                    <div class="agent-name">นฤมล คำใบ <span style="font-weight:400; font-size:14px;">(ต๋อย)</span></div>
+                    <div class="agent-role">ผู้จัดการขาย | FWD นวนคร</div>
+                    <div class="agent-lic">ใบอนุญาต: <strong>6901010926</strong> • ประสบการณ์ 20 ปี</div>
+                    <div class="agent-actions">
+                        <a href="tel:0869017235" class="btn-mini btn-mini-call"><i class="fa-solid fa-phone"></i> 086-901-7235</a>
+                        <button type="button" class="btn-mini btn-mini-line" onclick="sendToLineOA()"><i class="fab fa-line"></i> ทักไลน์</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+            <!-- Side-by-side Plan Selector -->
+            <div class="plan-grid">
+                <div class="plan-card active" id="card-909" onclick="selectPlan('90/9')">
+                    <div class="plan-check"><i class="fa-solid fa-check"></i></div>
+                    <div>
+                        <div class="plan-tag tag-short"><i class="fa-solid fa-bolt"></i> จบไว 9 ปี</div>
+                        <h3>แซฟวี เพนชัน 90/9</h3>
+                        <p class="plan-desc">ชำระเบี้ยสั้น 9 ปี (อายุรับประกัน 20-50 ปี)</p>
+                    </div>
+                    <div class="plan-price-row">
+                        <div class="price-num" id="price-909">-</div>
+                        <div class="price-unit" id="unit-909">บาท/ปี</div>
+                    </div>
+                </div>
+
+                <div class="plan-card" id="card-9060" onclick="selectPlan('90/60')">
+                    <div class="plan-check"><i class="fa-solid fa-check"></i></div>
+                    <div>
+                        <div class="plan-tag tag-long"><i class="fa-solid fa-piggy-bank"></i> จ่ายสบายถึง 60</div>
+                        <h3>แซฟวี เพนชัน 90/60</h3>
+                        <p class="plan-desc">ทยอยจ่ายถึงอายุ 60 ปี (อายุรับประกัน 20-55 ปี)</p>
+                    </div>
+                    <div class="plan-price-row">
+                        <div class="price-num" id="price-9060">-</div>
+                        <div class="price-unit" id="unit-9060">บาท/ปี</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Benefit Dashboard + Brochure Infographic -->
+            <div class="card card-grow">
+                <h2 class="section-title">
+                    <i class="fa-solid fa-chart-line"></i>
+                    แผนภาพผลประโยชน์ <span id="active-plan-label" style="color:var(--fwd-orange);">90/9</span>
+                    <span style="margin-left:auto; font-size:12px; font-weight:600; color:var(--fwd-muted);">ทุนประกันภัย <span id="header-sum-badge" style="color:var(--fwd-dark); font-size:13.5px;">1,000,000</span> บ.</span>
+                </h2>
+
+                <!-- 3 Compact KPI Cards -->
+                <div class="kpi-strip">
+                    <div class="kpi-item kpi-orange">
+                        <div class="kpi-label">เบี้ยรวมตลอดสัญญา</div>
+                        <div class="kpi-num" id="kpi-total-prem">-</div>
+                        <div class="kpi-sub" id="kpi-pay-years">ชำระ 9 ปี</div>
+                    </div>
+                    <div class="kpi-item kpi-green">
+                        <div class="kpi-label">รวมรับบำนาญ (688%)</div>
+                        <div class="kpi-num" id="kpi-total-ann">6,880,000</div>
+                        <div class="kpi-sub">อายุ 60-90 ปี (31 งวด)</div>
+                    </div>
+                    <div class="kpi-item">
+                        <div class="kpi-label">ผลประโยชน์ส่วนต่าง</div>
+                        <div class="kpi-num" id="kpi-net-gain" style="color:#059669;">-</div>
+                        <div class="kpi-sub">ไม่รวมเงินประหยัดภาษี</div>
+                    </div>
+                </div>
+
+                <!-- BROCHURE-STYLE VISUAL INFOGRAPHIC DIAGRAM -->
+                <div class="fwd-diagram">
+                    <!-- Top: Life Protection Split Bar -->
+                    <div class="diag-protect-row">
+                        <div class="diag-prot-pre">
+                            <div class="diag-prot-title"><i class="fa-solid fa-shield-halved"></i> คุ้มครองชีวิตก่อนอายุ 60 ปี</div>
+                            จ่าย <strong>110% ของเบี้ยสะสม</strong> (สูงสุด <strong id="diag-pre-death">3,177,900</strong> บ.) หรือมูลค่าเงินเวนคืน แล้วแต่จำนวนใดมากกว่า
+                        </div>
+                        <div class="diag-prot-post">
+                            <div class="diag-prot-title"><i class="fa-solid fa-hand-holding-heart"></i> คุ้มครองช่วงรับบำนาญ (การันตี 15 ปี)</div>
+                            จ่ายเบี้ยสะสมหักบำนาญที่รับแล้ว หรือ <strong>มูลค่าปัจจุบันของบำนาญที่ยังไม่ได้จ่ายจนครบ 15 ปี</strong> แล้วแต่จำนวนใดมากกว่า
+                        </div>
+                    </div>
+
+                    <!-- Middle & Bottom: 4-Stage Visual Milestone Diagram -->
+                    <div class="diag-milestones">
+                        <div class="ms-col">
+                            <div class="ms-age-circle">
+                                <span style="font-size:9px; color:var(--fwd-muted);">เริ่มอายุ</span>
+                                <span id="ms-start-age">35 ปี</span>
+                            </div>
+                            <div class="ms-connector"></div>
+                            <div class="ms-pill pay">
+                                <div style="font-size:10.5px; font-weight:600;">ระยะชำระเบี้ย</div>
+                                <div class="ms-pct" id="ms-pay-term" style="font-size:16px;">9 ปี</div>
+                                <div class="ms-amt" id="ms-pay-yr">321,000 บ./ปี</div>
+                                <div class="ms-sub" id="ms-pay-end">ถึงอายุ 43 ปี</div>
+                            </div>
+                        </div>
+                        <div class="ms-col">
+                            <div class="ms-age-circle">
+                                <span>60-69</span>
+                                <span style="font-size:9px; color:var(--fwd-orange);">10 งวด</span>
+                            </div>
+                            <div class="ms-connector"></div>
+                            <div class="ms-pill t1">
+                                <div style="font-size:10.5px;">บำนาญช่วงที่ 1</div>
+                                <div class="ms-pct">16%</div>
+                                <div class="ms-amt"><span id="ann-tier-1">160,000</span> บ./ปี</div>
+                                <div class="ms-sub">รวม <span id="ann-sub-1">1,600,000</span> บ.</div>
+                            </div>
+                        </div>
+                        <div class="ms-col">
+                            <div class="ms-age-circle" style="border-color: var(--fwd-teal);">
+                                <span>70-79</span>
+                                <span style="font-size:9px; color:#059669;">10 งวด</span>
+                            </div>
+                            <div class="ms-connector"></div>
+                            <div class="ms-pill t2">
+                                <div style="font-size:10.5px;">บำนาญช่วงที่ 2</div>
+                                <div class="ms-pct">22%</div>
+                                <div class="ms-amt"><span id="ann-tier-2">220,000</span> บ./ปี</div>
+                                <div class="ms-sub">รวม <span id="ann-sub-2">2,200,000</span> บ.</div>
+                            </div>
+                        </div>
+                        <div class="ms-col">
+                            <div class="ms-age-circle" style="border-color: var(--fwd-sky);">
+                                <span>80-90</span>
+                                <span style="font-size:9px; color:#0284C7;">11 งวด</span>
+                            </div>
+                            <div class="ms-connector"></div>
+                            <div class="ms-pill t3">
+                                <div style="font-size:10.5px;">บำนาญช่วงที่ 3</div>
+                                <div class="ms-pct">28%</div>
+                                <div class="ms-amt"><span id="ann-tier-3">280,000</span> บ./ปี</div>
+                                <div class="ms-sub">รวม <span id="ann-sub-3">3,080,000</span> บ.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size:11px; color:var(--fwd-muted); text-align:center;">
+                        • % หมายถึง เปอร์เซ็นต์ของทุนประกันภัย • รับบำนาญรวมทั้งหมด <strong>31 งวด = 688% ของทุนประกันภัย</strong>
+                    </div>
+                </div>
+
+                <!-- Action CTA -->
+                <div class="cta-wrap">
+                    <button class="cta-primary" onclick="openBenefitTableWindow('summary')">
+                        <i class="fa-solid fa-file-invoice"></i> เปิดใบเสนอราคา Infographic A4 & ส่งออกภาพ / PDF / พิมพ์
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POLICY VALUE & 15-YEAR PRESENT VALUE TABLE (SPACIOUS 3x5 GRID) -->
+    <div class="pv-section-wrap">
+        <div class="pv-accordion-card" id="pv-accordion">
+            <button type="button" class="pv-header-btn" onclick="togglePVAccordion()">
+                <div class="pv-header-left">
+                    <div class="pv-header-icon"><i class="fa-solid fa-table-cells"></i></div>
+                    <div>
+                        <div class="pv-header-title">ตารางมูลค่ากรมธรรม์ และมูลค่าปัจจุบันของเงินบำนาญที่ยังไม่ได้จ่ายจนครบ 15 ปี</div>
+                        <div class="pv-header-sub">คลิกเพื่อดูตารางมูลค่าปัจจุบันตามทุนประกันภัยของคุณ (<span id="pv-btn-plan">แผน 90/9 • ทุน 1,000,000 บ.</span>) และเงื่อนไขมูลค่าเวนคืน</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-down pv-chevron"></i>
+            </button>
+            <div class="pv-body">
+                <div class="pv-info-banner">
+                    <div class="pv-info-box">
+                        <strong><i class="fa-solid fa-shield-cat"></i> ช่วงก่อนรับบำนาญ (ก่อนอายุ 60 ปี)</strong>
+                        • <b>มูลค่าเงินเวนคืนกรมธรรม์:</b> มีมูลค่าเงินเวนคืนตามตารางมูลค่ากรมธรรม์ และสามารถใช้สิทธิกู้ยืมเงินตามกรมธรรม์ได้<br>
+                        • <b>มูลค่าใช้เงินสำเร็จ:</b> สามารถขอเปลี่ยนเป็นกรมธรรม์ใช้เงินสำเร็จได้โดยไม่ต้องชำระเบี้ยต่อ (สำหรับช่วงก่อนรับบำนาญเท่านั้น)
+                    </div>
+                    <div class="pv-info-box">
+                        <strong><i class="fa-solid fa-circle-check"></i> ช่วงรับเงินบำนาญ (การันตี 15 ปี)</strong>
+                        • หากเสียชีวิตก่อนรับบำนาญครบ 15 งวด บริษัทฯ จ่ายครั้งเดียวเท่ากับ <b>(เบี้ยสะสมหักบำนาญที่รับแล้ว)</b> หรือ <b>มูลค่าปัจจุบันตามตารางด้านล่าง</b> แล้วแต่จำนวนใดมากกว่า<br>
+                        • มูลค่าในแถวสีเขียวคำนวณตามทุนประกันภัยจริงที่คุณตั้งค่าไว้ด้านบน
+                    </div>
+                </div>
+
+                <div style="font-size:13.5px; font-weight:700; color:var(--fwd-dark); margin-bottom:10px;">
+                    ตารางมูลค่าปัจจุบันของเงินบำนาญที่ยังไม่ได้จ่ายจนครบ 15 ปี — <span id="pv-table-title" style="color:var(--fwd-orange);">FWD Savvy Pension 90/9</span>
+                </div>
+                <div id="pv-main-table" class="pv-split-stack"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar" id="sticky-bar">
+    <div class="sticky-inner">
+        <div class="stk-left">
+            <div class="stk-gender-avatar male" id="stk-gender-avatar" title="เพศผู้เอาประกันภัย">👨</div>
+            <div class="stk-meta">
+                <div class="stk-plan-lbl">
+                    <span class="stk-gender-pill male" id="stk-gender-pill"><i class="fa-solid fa-mars"></i> ชาย 35 ปี</span>
+                    <span>แซฟวี เพนชัน <strong id="stk-plan">90/9</strong> • <span id="stk-period">รายปี</span></span>
+                </div>
+                <div class="stk-price-val">
+                    <span id="stk-price">0</span>
+                    <small style="font-size:12px; font-weight:500; color:var(--fwd-slate);" id="stk-unit-lbl">บาท/ปี</small>
+                </div>
+            </div>
+        </div>
+        <div class="stk-btns">
+            <button class="stk-btn-quote" onclick="openBenefitTableWindow('summary')"><i class="fa-solid fa-table-list"></i> <span>ใบเสนอราคา A4</span></button>
+            <button class="stk-btn-line" onclick="sendToLineOA()"><i class="fab fa-line" style="font-size:18px;"></i> ปรึกษาตัวแทน</button>
+        </div>
+    </div>
+</div>
+
+<!-- REPORT / A4 INFOGRAPHIC OVERLAY -->
+<div id="report-overlay"></div>
+
+<script>
+    const FALLBACK_AVATAR = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+            <rect width="160" height="160" fill="#FFF4EC"/>
+            <circle cx="80" cy="60" r="28" fill="#FF6600" opacity="0.85"/>
+            <path d="M32 142 C32 108 128 108 128 142" fill="#FF6600" opacity="0.85"/>
+        </svg>`
+    );
+
+    let agentImgSrc = "agent.jpg";
+    (function initAgentPhoto() {
+        const img = document.getElementById("main-agent-img");
+        img.onerror = function() {
+            agentImgSrc = FALLBACK_AVATAR;
+            this.onerror = null;
+            this.src = FALLBACK_AVATAR;
+        };
+    })();
+
+    const rates = {
+        "90/9": {
+            20:{m:216.50,f:232.00}, 21:{m:223.00,f:238.00}, 22:{m:229.50,f:241.50}, 23:{m:236.50,f:247.50}, 24:{m:243.00,f:251.00},
+            25:{m:250.00,f:258.00}, 26:{m:257.00,f:265.00}, 27:{m:264.00,f:272.00}, 28:{m:271.00,f:279.00}, 29:{m:278.00,f:286.00},
+            30:{m:285.00,f:293.00}, 31:{m:292.00,f:300.00}, 32:{m:299.00,f:307.00}, 33:{m:306.00,f:314.00}, 34:{m:313.00,f:321.00},
+            35:{m:321.00,f:329.00}, 36:{m:330.00,f:338.00}, 37:{m:339.00,f:347.00}, 38:{m:348.00,f:356.00}, 39:{m:357.00,f:365.00},
+            40:{m:366.00,f:380.00}, 41:{m:376.00,f:388.00}, 42:{m:386.00,f:398.00}, 43:{m:396.00,f:407.00}, 44:{m:406.00,f:415.50},
+            45:{m:416.00,f:425.00}, 46:{m:426.00,f:434.00}, 47:{m:436.00,f:444.00}, 48:{m:446.00,f:454.00}, 49:{m:456.00,f:464.00},
+            50:{m:466.00,f:474.00}
+        },
+        "90/60": {
+            20:{m:65.00,f:70.00},   21:{m:67.00,f:73.00},   22:{m:70.00,f:76.00},   23:{m:73.00,f:79.50},   24:{m:76.00,f:83.00},
+            25:{m:80.00,f:87.00},   26:{m:83.00,f:91.00},   27:{m:87.00,f:95.00},   28:{m:91.00,f:99.50},   29:{m:96.00,f:104.00},
+            30:{m:101.00,f:109.00}, 31:{m:106.00,f:114.50}, 32:{m:111.00,f:120.00}, 33:{m:117.00,f:126.50}, 34:{m:124.00,f:133.00},
+            35:{m:131.00,f:140.00}, 36:{m:139.00,f:148.00}, 37:{m:148.00,f:156.50}, 38:{m:157.00,f:166.50}, 39:{m:168.00,f:179.00},
+            40:{m:179.50,f:192.00}, 41:{m:192.00,f:204.50}, 42:{m:206.00,f:219.00}, 43:{m:222.00,f:234.50}, 44:{m:239.50,f:252.00},
+            45:{m:259.00,f:272.00}, 46:{m:282.50,f:294.50}, 47:{m:309.50,f:321.00}, 48:{m:340.00,f:351.50}, 49:{m:377.50,f:388.00},
+            50:{m:420.00,f:431.50}, 51:{m:474.00,f:486.00}, 52:{m:540.50,f:553.50}, 53:{m:626.00,f:641.00}, 54:{m:741.50,f:755.50},
+            55:{m:901.00,f:916.50}
+        }
+    };
+
+    const pv15Table = {
+        "90/9":  {1:2239.121, 2:2117.585, 3:1993.800, 4:1867.725, 5:1739.318, 6:1608.536, 7:1475.333, 8:1339.667, 9:1201.491, 10:1060.759, 11:856.313, 12:648.084, 13:436.004, 14:220.000, 15:0},
+        "90/60": {1:2217.113, 2:2098.256, 3:1977.021, 4:1853.361, 5:1727.228, 6:1598.573, 7:1467.344, 8:1333.491, 9:1196.961, 10:1057.700, 11:854.454, 12:647.143, 13:435.686, 14:220.000, 15:0}
+    };
+
+    const periodMetaMap = {
+        year:    { unit: 'บาท/ปี',      label: 'รายปี',       mult: 1,    annMult: 1 },
+        half:    { unit: 'บาท/6 เดือน', label: 'ราย 6 เดือน', mult: 0.52, annMult: 2 },
+        quarter: { unit: 'บาท/3 เดือน', label: 'ราย 3 เดือน', mult: 0.27, annMult: 4 },
+        month:   { unit: 'บาท/เดือน',   label: 'รายเดือน',    mult: 0.09, annMult: 12 }
+    };
+
+    let currentGender = 'male';
+    let currentPlan = '90/9';
+    let currentPeriod = 'year';
+    let inputMode = 'sum';
+    let sumInsured = 1000000;
+    let targetPremium = 100000;
+    let activePlanPremium = 0;
+    let activeAnnualizedPremium = 0;
+    let taxBracket = 20;
+    let reportMode = 'summary'; // 'summary', 'full', 'pv'
+
+    function formatNum(n) {
+        return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function parseCleanInt(str) {
+        const digits = String(str).replace(/[^\d]/g, '');
+        return digits ? parseInt(digits, 10) : 0;
+    }
+
+    function togglePVAccordion() {
+        document.getElementById('pv-accordion').classList.toggle('open');
+    }
+
+    function setTaxRate(r) {
+        taxBracket = r;
+        document.querySelectorAll('#tax-rates-row .tax-rate-btn').forEach(btn => {
+            btn.classList.toggle('active', parseInt(btn.innerText, 10) === r);
+        });
+        calculate();
+    }
+
+    function setInputMode(mode) {
+        inputMode = mode;
+        document.getElementById('mode-sum-btn').classList.toggle('active', mode === 'sum');
+        document.getElementById('mode-prem-btn').classList.toggle('active', mode === 'prem');
+        document.getElementById('panel-mode-sum').style.display = mode === 'sum' ? 'block' : 'none';
+        document.getElementById('panel-mode-prem').style.display = mode === 'prem' ? 'block' : 'none';
+
+        if (mode === 'prem') {
+            if (activePlanPremium > 0) {
+                targetPremium = activePlanPremium;
+                document.getElementById('prem-text-input').value = formatNum(targetPremium);
+                syncQuickPremButtons();
+            }
+        } else {
+            document.getElementById('sum-text-input').value = formatNum(sumInsured);
+            document.getElementById('sum-slider').value = Math.min(10000000, Math.max(100000, sumInsured));
+            syncQuickSumButtons();
+        }
+        calculate();
+    }
+
+    function setGender(g) {
+        currentGender = g;
+        document.getElementById('m-btn').classList.toggle('active', g === 'male');
+        document.getElementById('f-btn').classList.toggle('active', g === 'female');
+        const slider = document.getElementById('sum-slider');
+        slider.classList.toggle('gender-m', g === 'male');
+        slider.classList.toggle('gender-f', g === 'female');
+        calculate();
+    }
+
+    function setPeriod(p) {
+        currentPeriod = p;
+        ['year','half','quarter','month'].forEach(k => {
+            document.getElementById('p-' + k).classList.toggle('active', k === p);
+        });
+        document.getElementById('prem-input-unit').innerText = periodMetaMap[p].unit;
+        calculate();
+    }
+
+    function handleSlider(val) {
+        sumInsured = parseInt(val, 10);
+        document.getElementById('sum-text-input').value = formatNum(sumInsured);
+        syncQuickSumButtons();
+        calculate();
+    }
+
+    function handleManualSumInput(val) {
+        const num = parseCleanInt(val);
+        if (num >= 100000) {
+            sumInsured = num;
+            document.getElementById('sum-slider').value = Math.min(10000000, num);
+            syncQuickSumButtons();
+            calculate();
+        }
+    }
+
+    function formatSumInputOnBlur() {
+        const el = document.getElementById('sum-text-input');
+        let num = parseCleanInt(el.value);
+        if (num < 100000) num = 100000;
+        sumInsured = num;
+        el.value = formatNum(sumInsured);
+        document.getElementById('sum-slider').value = Math.min(10000000, sumInsured);
+        syncQuickSumButtons();
+        calculate();
+    }
+
+    function setSum(v) {
+        sumInsured = v;
+        document.getElementById('sum-slider').value = Math.min(10000000, v);
+        document.getElementById('sum-text-input').value = formatNum(v);
+        syncQuickSumButtons();
+        calculate();
+    }
+
+    function handleManualPremInput(val) {
+        const num = parseCleanInt(val);
+        if (num > 0) {
+            targetPremium = num;
+            syncQuickPremButtons();
+            calculate();
+        }
+    }
+
+    function formatPremInputOnBlur() {
+        const el = document.getElementById('prem-text-input');
+        let num = parseCleanInt(el.value);
+        if (num < 1000) num = 10000;
+        targetPremium = num;
+        el.value = formatNum(targetPremium);
+        syncQuickPremButtons();
+        calculate();
+    }
+
+    function setBudgetPremium(v) {
+        targetPremium = v;
+        document.getElementById('prem-text-input').value = formatNum(v);
+        syncQuickPremButtons();
+        calculate();
+    }
+
+    function syncQuickSumButtons() {
+        document.querySelectorAll('#quick-sum-btns button').forEach(btn => {
+            btn.classList.toggle('active-sum', parseInt(btn.dataset.sum, 10) === sumInsured);
+        });
+    }
+
+    function syncQuickPremButtons() {
+        document.querySelectorAll('#quick-prem-btns button').forEach(btn => {
+            btn.classList.toggle('active-sum', parseInt(btn.dataset.prem, 10) === targetPremium);
+        });
+    }
+
+    function selectPlan(p) {
+        const card = document.getElementById(`card-${p.replace('/','')}`);
+        if (card.classList.contains('disabled')) return;
+        currentPlan = p;
+        document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        calculate();
+    }
+
+    function toggleDOB() {
+        document.getElementById('dob-drawer').classList.toggle('open');
+    }
+
+    function getAnnuityForAge(ageVal, sum) {
+        if (ageVal >= 60 && ageVal <= 69) return sum * 0.16;
+        if (ageVal >= 70 && ageVal <= 79) return sum * 0.22;
+        if (ageVal >= 80 && ageVal <= 90) return sum * 0.28;
+        return 0;
+    }
+
+    function updateStickyGenderUI(age) {
+        const isMale = currentGender === 'male';
+        const avatar = document.getElementById('stk-gender-avatar');
+        const pill = document.getElementById('stk-gender-pill');
+
+        avatar.className = 'stk-gender-avatar ' + (isMale ? 'male' : 'female');
+        avatar.innerText = isMale ? '👨' : '👩';
+
+        pill.className = 'stk-gender-pill ' + (isMale ? 'male' : 'female');
+        pill.innerHTML = isMale
+            ? `<i class="fa-solid fa-mars"></i> ชาย ${age} ปี`
+            : `<i class="fa-solid fa-venus"></i> หญิง ${age} ปี`;
+    }
+
+    /* ================= SPACIOUS 3-BLOCK x 5-COLUMN PV15 TABLE ================= */
+    function buildPVBlock(pv, sum, startIdx, endIdx) {
+        let headerCols = `<th class="col-lbl">งวดที่รับไปแล้ว</th>`;
+        let rateCols = `<td class="row-label">ต่อทุน 1,000 บาท</td>`;
+        let bahtCols = `<td class="row-label">มูลค่าตามทุน (บาท)</td>`;
+
+        for (let i = startIdx; i <= endIdx; i++) {
+            headerCols += `<th>งวดที่ ${i}</th>`;
+            rateCols += `<td>${pv[i].toFixed(3)}</td>`;
+            bahtCols += `<td>${formatNum((pv[i] * sum) / 1000)}</td>`;
+        }
+
+        return `
+            <table class="pv-table">
+                <thead><tr>${headerCols}</tr></thead>
+                <tbody>
+                    <tr>${rateCols}</tr>
+                    <tr class="row-baht">${bahtCols}</tr>
+                </tbody>
+            </table>
+        `;
+    }
+
+    function renderPVTableHTML(plan, sum) {
+        const pv = pv15Table[plan];
+        return (
+            buildPVBlock(pv, sum, 1, 5) +
+            buildPVBlock(pv, sum, 6, 10) +
+            buildPVBlock(pv, sum, 11, 15)
+        );
+    }
+
+    function calculate() {
+        let age = parseInt(document.getElementById('age-input').value, 10) || 35;
+        const warnBox = document.getElementById('age-warning');
+        const warnTxt = document.getElementById('age-warning-txt');
+
+        if (age < 20 || age > 55) {
+            warnTxt.innerText = "แบบประกันนี้รับประกันตั้งแต่อายุ 20 - 55 ปีเท่านั้น";
+            warnBox.style.display = 'block';
+        } else if (age > 50) {
+            warnTxt.innerText = "อายุ 51 - 55 ปี สามารถเลือกแผน แซฟวี เพนชัน 90/60 ได้เท่านั้น";
+            warnBox.style.display = 'block';
+            if (currentPlan === '90/9') {
+                currentPlan = '90/60';
+                document.getElementById('card-909').classList.remove('active');
+                document.getElementById('card-9060').classList.add('active');
+            }
+        } else {
+            warnBox.style.display = 'none';
+        }
+
+        const periodMeta = periodMetaMap[currentPeriod];
+        const gKey = currentGender === 'male' ? 'm' : 'f';
+
+        const minSumAlert = document.getElementById('min-sum-alert');
+        let isBelowMinSum = false;
+        if (inputMode === 'prem' && age >= 20 && age <= 55) {
+            const activeRate = rates[currentPlan][age][gKey];
+            const impliedAnnualPrem = targetPremium / periodMeta.mult;
+            const calcSum = Math.round((impliedAnnualPrem / activeRate) * 1000);
+            if (calcSum < 100000) {
+                sumInsured = 100000;
+                isBelowMinSum = true;
+                minSumAlert.style.display = 'block';
+            } else {
+                sumInsured = calcSum;
+                isBelowMinSum = false;
+                minSumAlert.style.display = 'none';
+            }
+            document.getElementById('budget-plan-lbl').innerText = currentPlan;
+            document.getElementById('budget-sum-result').innerText = formatNum(sumInsured);
+        } else {
+            minSumAlert.style.display = 'none';
+        }
+
+        document.getElementById('header-sum-badge').innerText = formatNum(sumInsured);
+        const t1 = sumInsured * 0.16;
+        const t2 = sumInsured * 0.22;
+        const t3 = sumInsured * 0.28;
+        document.getElementById('ann-tier-1').innerText = formatNum(t1);
+        document.getElementById('ann-tier-2').innerText = formatNum(t2);
+        document.getElementById('ann-tier-3').innerText = formatNum(t3);
+        document.getElementById('ann-sub-1').innerText = formatNum(t1 * 10);
+        document.getElementById('ann-sub-2').innerText = formatNum(t2 * 10);
+        document.getElementById('ann-sub-3').innerText = formatNum(t3 * 11);
+
+        const totalAnnuity = sumInsured * 6.88;
+        document.getElementById('kpi-total-ann').innerText = formatNum(totalAnnuity);
+
+        updateStickyGenderUI(age);
+
+        ["90/9", "90/60"].forEach(p => {
+            const key = p.replace('/', '');
+            const card = document.getElementById(`card-${key}`);
+            const priceEl = document.getElementById(`price-${key}`);
+            const unitEl = document.getElementById(`unit-${key}`);
+            const maxAge = p === '90/9' ? 50 : 55;
+
+            if (age < 20 || age > maxAge) {
+                card.classList.add('disabled');
+                priceEl.innerText = "ไม่รองรับ";
+                unitEl.innerText = p === '90/9' ? "สูงสุด 50 ปี" : "20-55 ปี";
+            } else {
+                card.classList.remove('disabled');
+                const rate = rates[p][age][gKey];
+                const annualPrem = (sumInsured / 1000) * rate;
+                let installment;
+                if (inputMode === 'prem' && p === currentPlan && !isBelowMinSum) {
+                    installment = targetPremium;
+                } else {
+                    installment = Math.round(annualPrem * periodMeta.mult);
+                }
+
+                priceEl.innerText = formatNum(installment);
+                unitEl.innerText = periodMeta.unit;
+
+                if (p === currentPlan) {
+                    activePlanPremium = installment;
+                    activeAnnualizedPremium = installment * periodMeta.annMult;
+
+                    const payYears = p === '90/9' ? 9 : (60 - age);
+                    const totalPrem = activeAnnualizedPremium * payYears;
+                    const netGain = totalAnnuity - totalPrem;
+
+                    document.getElementById('active-plan-label').innerText = p;
+                    document.getElementById('kpi-total-prem').innerText = formatNum(totalPrem);
+                    document.getElementById('kpi-pay-years').innerText = `ชำระ ${payYears} ปี`;
+                    document.getElementById('kpi-net-gain').innerText = (netGain >= 0 ? "+" : "") + formatNum(netGain);
+
+                    document.getElementById('diag-pre-death').innerText = formatNum(totalPrem * 1.10);
+                    document.getElementById('ms-start-age').innerText = `${age} ปี`;
+                    document.getElementById('ms-pay-term').innerText = p === '90/9' ? '9 ปี' : `${payYears} ปี`;
+                    document.getElementById('ms-pay-yr').innerText = `${formatNum(activeAnnualizedPremium)} บ./ปี`;
+                    document.getElementById('ms-pay-end').innerText = p === '90/9' ? `ถึงอายุ ${age + 8} ปี` : 'ถึงอายุ 59 ปี';
+
+                    const deductiblePerYr = Math.min(activeAnnualizedPremium, 300000);
+                    const taxSaveYr = Math.round(deductiblePerYr * (taxBracket / 100));
+                    const taxSaveTotal = taxSaveYr * payYears;
+                    document.getElementById('tax-save-yr').innerText = `${formatNum(taxSaveYr)} บ.`;
+                    document.getElementById('tax-save-total').innerText = `${formatNum(taxSaveTotal)} บ.`;
+                    document.getElementById('tax-years-lbl').innerText = payYears;
+
+                    document.getElementById('pv-btn-plan').innerText = `แผน ${p} • ทุน ${formatNum(sumInsured)} บ.`;
+                    document.getElementById('pv-table-title').innerText = `FWD Savvy Pension ${p}`;
+                    document.getElementById('pv-main-table').innerHTML = renderPVTableHTML(p, sumInsured);
+
+                    document.getElementById('stk-plan').innerText = p;
+                    document.getElementById('stk-period').innerText = periodMeta.label;
+                    document.getElementById('stk-price').innerText = formatNum(installment);
+                    document.getElementById('stk-unit-lbl').innerText = periodMeta.unit;
+                }
+            }
+        });
+    }
+
+    /* ================= BUILD REPORT DATA ================= */
+    function buildScheduleData(age) {
+        const payYears = currentPlan === '90/9' ? 9 : (60 - age);
+        const rows = [];
+        let cumPrem = 0;
+        let cumAnn = 0;
+        let annCount = 0;
+
+        for (let yr = 1; age + yr - 1 <= 90; yr++) {
+            const curAge = age + yr - 1;
+            const premThisYr = yr <= payYears ? activeAnnualizedPremium : 0;
+            cumPrem += premThisYr;
+
+            const annVal = getAnnuityForAge(curAge, sumInsured);
+            let deathBen = 0;
+            let phaseClass = "phase-wait";
+
+            if (curAge < 60) {
+                deathBen = Math.round(cumPrem * 1.10);
+                phaseClass = yr <= payYears ? "phase-pay" : "phase-wait";
+            } else {
+                annCount++;
+                cumAnn += annVal;
+                if (annCount <= 15) {
+                    const pvRate = pv15Table[currentPlan][annCount] || 0;
+                    const pvVal = Math.round((pvRate * sumInsured) / 1000);
+                    const diffVal = Math.max(0, cumPrem - cumAnn);
+                    deathBen = Math.max(diffVal, pvVal);
+                } else {
+                    deathBen = Math.max(0, cumPrem - cumAnn);
+                }
+                if (curAge <= 69) phaseClass = "phase-ann1";
+                else if (curAge <= 79) phaseClass = "phase-ann2";
+                else phaseClass = "phase-ann3";
+            }
+
+            rows.push({
+                policyYear: yr,
+                age: curAge,
+                prem: premThisYr,
+                cumPrem: cumPrem,
+                deathBen: deathBen,
+                annVal: annVal,
+                cumAnn: cumAnn,
+                phaseClass: phaseClass
+            });
+        }
+        return { payYears, rows, totalPrem: cumPrem, totalAnn: cumAnn };
+    }
+
+    function openBenefitTableWindow(mode) {
+        const age = parseInt(document.getElementById('age-input').value, 10) || 35;
+        if (age < 20 || age > 55) return alert("อายุไม่เข้าเกณฑ์รับประกันภัย (20 - 55 ปี)");
+        if (currentPlan === '90/9' && age > 50) return alert("แผน 90/9 รับประกันสูงสุด 50 ปี กรุณาเลือกแผน 90/60");
+
+        if (mode) reportMode = mode;
+        const data = buildScheduleData(age);
+        const planName = currentPlan === '90/9' ? 'แซฟวี เพนชัน 90/9' : 'แซฟวี เพนชัน 90/60';
+        const periodTxt = periodMetaMap[currentPeriod].label;
+        const deductiblePerYr = Math.min(activeAnnualizedPremium, 300000);
+        const taxSaveYr = Math.round(deductiblePerYr * (taxBracket / 100));
+        const taxSaveTotal = taxSaveYr * data.payYears;
+
+        const t1 = sumInsured * 0.16;
+        const t2 = sumInsured * 0.22;
+        const t3 = sumInsured * 0.28;
+
+        const isSingleA4 = (reportMode === 'summary' || reportMode === 'pv');
+
+        let mainBodyHTML = "";
+        if (reportMode === 'summary') {
+            mainBodyHTML = `
+                <div class="rpt-brochure-box">
+                    <div class="rpt-brochure-title">
+                        <span><i class="fa-solid fa-diagram-project" style="color:var(--fwd-orange);"></i> แผนภาพสรุปผลประโยชน์และความคุ้มครอง (FWD ${planName})</span>
+                        <span style="font-size:11px; color:#059669; font-weight:600;">ลดหย่อนภาษีได้สูงสุด 300,000 บ./ปี</span>
+                    </div>
+                    <div class="diag-protect-row">
+                        <div class="diag-prot-pre">
+                            <div class="diag-prot-title"><i class="fa-solid fa-shield-halved"></i> ความคุ้มครองชีวิตก่อนอายุ 60 ปี</div>
+                            110% ของเบี้ยประกันภัยที่ชำระมาทั้งหมด (สูงสุด <strong>${formatNum(data.totalPrem * 1.10)} บ.</strong>) หรือมูลค่าเงินเวนคืน แล้วแต่จำนวนใดมากกว่า
+                        </div>
+                        <div class="diag-prot-post">
+                            <div class="diag-prot-title"><i class="fa-solid fa-hand-holding-heart"></i> ความคุ้มครองช่วงรับบำนาญ (การันตี 15 ปี)</div>
+                            เบี้ยชำระทั้งหมดหักบำนาญที่รับแล้ว หรือ <strong>มูลค่าปัจจุบันของบำนาญที่ยังไม่ได้จ่ายจนครบ 15 ปี</strong> แล้วแต่จำนวนใดมากกว่า
+                        </div>
+                    </div>
+                    <div class="diag-milestones">
+                        <div class="ms-col">
+                            <div class="ms-age-circle"><span style="font-size:8.5px; color:#718096;">เริ่มอายุ</span><span>${age} ปี</span></div>
+                            <div class="ms-pill pay">
+                                <div style="font-size:9.5px; font-weight:600;">ระยะชำระเบี้ย</div>
+                                <div class="ms-pct" style="font-size:15px;">${data.payYears} ปี</div>
+                                <div class="ms-amt">${formatNum(activeAnnualizedPremium)} บ./ปี</div>
+                                <div class="ms-sub">รวม ${formatNum(data.totalPrem)} บ.</div>
+                            </div>
+                        </div>
+                        <div class="ms-col">
+                            <div class="ms-age-circle"><span>60-69</span><span style="font-size:8.5px; color:var(--fwd-orange);">10 งวด</span></div>
+                            <div class="ms-pill t1">
+                                <div style="font-size:9.5px;">บำนาญช่วงที่ 1</div>
+                                <div class="ms-pct">16%</div>
+                                <div class="ms-amt">${formatNum(t1)} บ./ปี</div>
+                                <div class="ms-sub">รวม ${formatNum(t1*10)} บ.</div>
+                            </div>
+                        </div>
+                        <div class="ms-col">
+                            <div class="ms-age-circle" style="border-color:var(--fwd-teal);"><span>70-79</span><span style="font-size:8.5px; color:#059669;">10 งวด</span></div>
+                            <div class="ms-pill t2">
+                                <div style="font-size:9.5px;">บำนาญช่วงที่ 2</div>
+                                <div class="ms-pct">22%</div>
+                                <div class="ms-amt">${formatNum(t2)} บ./ปี</div>
+                                <div class="ms-sub">รวม ${formatNum(t2*10)} บ.</div>
+                            </div>
+                        </div>
+                        <div class="ms-col">
+                            <div class="ms-age-circle" style="border-color:var(--fwd-sky);"><span>80-90</span><span style="font-size:8.5px; color:#0284C7;">11 งวด</span></div>
+                            <div class="ms-pill t3">
+                                <div style="font-size:9.5px;">บำนาญช่วงที่ 3</div>
+                                <div class="ms-pct">28%</div>
+                                <div class="ms-amt">${formatNum(t3)} บ./ปี</div>
+                                <div class="ms-sub">รวม ${formatNum(t3*11)} บ.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="rpt-pv-title">
+                        <span><i class="fa-solid fa-table-cells" style="color:var(--fwd-orange);"></i> ตารางมูลค่าปัจจุบันของเงินบำนาญที่ยังไม่ได้จ่ายจนครบ 15 ปี (กรณีเสียชีวิตช่วงรับบำนาญ)</span>
+                        <span style="font-size:11px; color:#059669; font-weight:700;">ทุน ${formatNum(sumInsured)} บาท</span>
+                    </div>
+                    <div class="pv-split-stack">${renderPVTableHTML(currentPlan, sumInsured)}</div>
+                </div>
+            `;
+        } else if (reportMode === 'full') {
+            const rowsHtml = data.rows.map(r => `
+                <tr class="${r.phaseClass}">
+                    <td>${r.policyYear}</td>
+                    <td>${r.age}</td>
+                    <td>${r.prem > 0 ? formatNum(r.prem) : "-"}</td>
+                    <td>${formatNum(r.cumPrem)}</td>
+                    <td>${r.deathBen > 0 ? formatNum(r.deathBen) : "-"}</td>
+                    <td class="ann-val">${r.annVal > 0 ? formatNum(r.annVal) : "-"}</td>
+                </tr>
+            `).join('');
+            mainBodyHTML = `
+                <div class="table-scroll">
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <th>ปีที่</th><th>อายุ</th><th>เบี้ยชำระ/ปี</th><th>เบี้ยสะสม</th><th>คุ้มครองชีวิต*</th><th>รับบำนาญ</th>
+                            </tr>
+                        </thead>
+                        <tbody>${rowsHtml}</tbody>
+                    </table>
+                </div>
+            `;
+        } else {
+            mainBodyHTML = `
+                <div class="pv-dual-mode" style="display:flex; flex-direction:column; gap:10px;">
+                    <div class="pv-info-banner" style="margin:0;">
+                        <div class="pv-info-box" style="padding:8px 11px; font-size:10.5px;">
+                            <strong style="font-size:11.5px;">ช่วงก่อนรับบำนาญ (ก่อนอายุ 60 ปี)</strong>
+                            มีมูลค่าเงินเวนคืนกรมธรรม์ และสามารถขอเปลี่ยนเป็นกรมธรรม์ใช้เงินสำเร็จหรือกู้ยืมเงินตามกรมธรรม์ได้ตามตารางมูลค่ากรมธรรม์
+                        </div>
+                        <div class="pv-info-box" style="padding:8px 11px; font-size:10.5px;">
+                            <strong style="font-size:11.5px;">ช่วงรับเงินบำนาญ (การันตี 15 ปี)</strong>
+                            เสียชีวิตก่อนรับครบ 15 งวด จ่ายครั้งเดียวเท่ากับเบี้ยสะสมหักบำนาญที่รับแล้ว หรือมูลค่าปัจจุบันตามตารางด้านล่าง แล้วแต่จำนวนใดมากกว่า
+                        </div>
+                    </div>
+                    <div>
+                        <div class="rpt-pv-title" style="margin-bottom:5px;"><span><i class="fa-solid fa-table-cells" style="color:var(--fwd-orange);"></i> FWD Savvy Pension 90/9</span><span style="font-size:10.5px; color:#059669;">ทุน ${formatNum(sumInsured)} บาท</span></div>
+                        <div class="pv-split-stack">${renderPVTableHTML('90/9', sumInsured)}</div>
+                    </div>
+                    <div>
+                        <div class="rpt-pv-title" style="margin-bottom:5px;"><span><i class="fa-solid fa-table-cells" style="color:var(--fwd-orange);"></i> FWD Savvy Pension 90/60</span><span style="font-size:10.5px; color:#059669;">ทุน ${formatNum(sumInsured)} บาท</span></div>
+                        <div class="pv-split-stack">${renderPVTableHTML('90/60', sumInsured)}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        const html = `
+            <div class="report-toolbar">
+                <div class="report-mode-tabs">
+                    <button class="mode-tab ${reportMode==='summary'?'active':''}" onclick="openBenefitTableWindow('summary')">
+                        <i class="fa-solid fa-image"></i> Infographic A4 (1 หน้า)
+                    </button>
+                    <button class="mode-tab ${reportMode==='full'?'active':''}" onclick="openBenefitTableWindow('full')">
+                        <i class="fa-solid fa-list-ol"></i> ตารางรายปี (${data.rows.length} ปี)
+                    </button>
+                    <button class="mode-tab ${reportMode==='pv'?'active':''}" onclick="openBenefitTableWindow('pv')">
+                        <i class="fa-solid fa-table-cells"></i> ตารางมูลค่า 15 ปี (A4)
+                    </button>
+                </div>
+                <div class="toolbar-actions">
+                    <button class="btn-act btn-save" id="save-btn" onclick="saveAsImage()"><i class="fa-solid fa-image"></i> บันทึกภาพ</button>
+                    <button class="btn-act btn-pdf" id="pdf-btn" onclick="saveAsPDF()"><i class="fa-solid fa-file-pdf"></i> แชร์ / PDF (A4)</button>
+                    <button class="btn-act btn-print" onclick="window.print()"><i class="fa-solid fa-print"></i> พิมพ์ A4</button>
+                    <button class="btn-act btn-close" onclick="closeReport()"><i class="fa-solid fa-xmark"></i> ปิด</button>
+                </div>
+            </div>
+
+            <div id="report-content-wrapper">
+                <div class="report-sheet ${isSingleA4 ? 'a4-page' : ''}" id="capture-area">
+                    <div class="a4-main-stack">
+                        <div class="rpt-head">
+                            <div>
+                                <h1>ใบเสนอราคาแผนบำนาญลดหย่อนภาษี</h1>
+                                <div class="rpt-head-sub">แบบประกัน : <strong>FWD ${planName}</strong> • จุดเริ่มต้นของชีวิตเกษียณที่คุณกำหนดได้เอง</div>
+                            </div>
+                            <div class="rpt-logo-wrap"><img src="logo.png" alt="FWD Logo" class="rpt-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div class="rpt-brand-badge" style="display:none;">FWD</div></div>
+                        </div>
+
+                        <div class="info-grid">
+                            <div class="info-cell">เพศ / อายุเริ่มต้น<strong>${currentGender==='male'?'ชาย':'หญิง'} / ${age} ปี</strong></div>
+                            <div class="info-cell">ทุนประกันภัย<strong class="hl">${formatNum(sumInsured)} บาท</strong></div>
+                            <div class="info-cell">ระยะเวลาชำระเบี้ย<strong>${data.payYears} ปี (คุ้มครองถึงอายุ 90 ปี)</strong></div>
+                            <div class="info-cell">งวดการชำระ<strong>${periodTxt}</strong></div>
+                            <div class="info-cell">เบี้ยประกันต่องวด<strong class="hl">${formatNum(activePlanPremium)} บาท</strong></div>
+                            <div class="info-cell">สิทธิลดหย่อนภาษี (ฐาน ${taxBracket}%)<strong style="color:#059669;">ประหยัด ~${formatNum(taxSaveYr)} บ./ปี</strong></div>
+                        </div>
+
+                        <div class="summary-cards">
+                            <div class="s-card orange">
+                                <div class="s-title">รวมเบี้ยชำระตลอดสัญญา</div>
+                                <div class="s-val">${formatNum(data.totalPrem)} บ.</div>
+                                <div class="s-sub">ชำระ ${data.payYears} ปี</div>
+                            </div>
+                            <div class="s-card green">
+                                <div class="s-title">รวมรับบำนาญ (688%)</div>
+                                <div class="s-val">${formatNum(data.totalAnn)} บ.</div>
+                                <div class="s-sub">อายุ 60 - 90 ปี (31 งวด)</div>
+                            </div>
+                            <div class="s-card dark">
+                                <div class="s-title">ผลประโยชน์ส่วนต่างสุทธิ</div>
+                                <div class="s-val" style="color:#4ADE80;">+${formatNum(data.totalAnn - data.totalPrem)} บ.</div>
+                                <div class="s-sub">ยังไม่รวมเงินประหยัดภาษี</div>
+                            </div>
+                            <div class="s-card tax">
+                                <div class="s-title">ประหยัดภาษีรวม (${taxBracket}%)</div>
+                                <div class="s-val">${formatNum(taxSaveTotal)} บ.</div>
+                                <div class="s-sub">สูงสุด 3 แสน/ปี ตามเกณฑ์</div>
+                            </div>
+                        </div>
+
+                        ${mainBodyHTML}
+                    </div>
+
+                    <div class="a4-bottom-stack">
+                        <div class="rpt-notes">
+                            <strong>หมายเหตุและเงื่อนไขสำคัญ:</strong><br>
+                            • รับเงินบำนาญทุกปี: อายุ 60-69 ปี (16%), อายุ 70-79 ปี (22%), อายุ 80-90 ปี (28%) รวม 31 งวด = 688% ของทุนประกันภัย<br>
+                            • เบี้ยประกันภัยสามารถนำไปลดหย่อนภาษีเงินได้บุคคลธรรมดาได้สูงสุด 300,000 บาท/ปี (กรณีไม่มีเบี้ยประกันชีวิตทั่วไปอื่น) ตามประกาศอธิบดีกรมสรรพากร<br>
+                            • ช่วงก่อนอายุ 60 ปี มีมูลค่าเงินเวนคืนกรมธรรม์และสิทธิใช้เงินสำเร็จตามตารางมูลค่ากรมธรรม์ • เงื่อนไขความคุ้มครองเป็นไปตามกรมธรรม์ของ บมจ.เอฟดับบลิวดี ประกันชีวิต
+                        </div>
+
+                        <div class="rpt-footer">
+                            <div class="rpt-agent-left">
+                                <img src="${agentImgSrc}" alt="นฤมล คำใบ" onerror="this.src='${FALLBACK_AVATAR}'">
+                                <div>
+                                    <strong style="color:var(--fwd-orange); font-size:14.5px;">ดูแลโดย: นฤมล คำใบ (ต๋อย)</strong><br>
+                                    <span style="font-size:12px; color:var(--fwd-slate);">ผู้จัดการขาย สำนักงานตัวแทน FWD นวนคร</span><br>
+                                    <span style="font-size:11.5px; color:var(--fwd-muted);">ใบอนุญาตตัวแทนประกันชีวิตเลขที่: 6901010926</span>
+                                </div>
+                            </div>
+                            <div style="text-align:right;">
+                                <div style="font-size:11.5px; color:var(--fwd-muted);">สอบถามข้อมูล / ทำแผนเฉพาะบุคคล</div>
+                                <div style="font-size:16.5px; font-weight:800; color:var(--fwd-dark);"><i class="fa-solid fa-phone" style="color:var(--fwd-orange);"></i> 086-901-7235</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.body.style.overflow = 'hidden';
+        const overlay = document.getElementById('report-overlay');
+        overlay.innerHTML = html;
+        overlay.style.display = 'block';
+        overlay.scrollTop = 0;
+    }
+
+    function closeReport() {
+        document.getElementById('report-overlay').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    /* ================= EXACT A4 EXPORT HELPER ================= */
+    async function renderElementToCanvas(element, widthPx = 794, scaleVal = 2.5, forceA4Height = false) {
+        if (document.fonts && document.fonts.ready) {
+            await document.fonts.ready;
+        }
+        const cloneWrap = document.createElement('div');
+        cloneWrap.style.position = 'fixed';
+        cloneWrap.style.left = '-99999px';
+        cloneWrap.style.top = '0';
+        cloneWrap.style.width = widthPx + 'px';
+        cloneWrap.style.background = '#ffffff';
+        cloneWrap.style.zIndex = '-1';
+
+        const clone = element.cloneNode(true);
+        clone.style.width = widthPx + 'px';
+        clone.style.maxWidth = widthPx + 'px';
+        clone.style.margin = '0';
+        clone.style.boxShadow = 'none';
+        clone.style.borderRadius = '0';
+        clone.style.padding = '34px 36px';
+
+        if (forceA4Height) {
+            clone.style.minHeight = '1123px';
+            clone.style.display = 'flex';
+            clone.style.flexDirection = 'column';
+            clone.style.justifyContent = 'space-between';
+        }
+
+        // Enforce desktop A4 layout regardless of mobile viewport
+        const infoGrid = clone.querySelector('.info-grid');
+        if (infoGrid) infoGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        const sumCards = clone.querySelector('.summary-cards');
+        if (sumCards) sumCards.style.gridTemplateColumns = 'repeat(4, 1fr)';
+        const protRow = clone.querySelector('.diag-protect-row');
+        if (protRow) protRow.style.gridTemplateColumns = '0.95fr 1.25fr';
+        const msGrid = clone.querySelector('.diag-milestones');
+        if (msGrid) msGrid.style.gridTemplateColumns = 'repeat(4, 1fr)';
+        const pvBanners = clone.querySelectorAll('.pv-info-banner');
+        pvBanners.forEach(b => b.style.gridTemplateColumns = '1fr 1fr');
+        const logoImg = clone.querySelector('.rpt-logo-img');
+        if (logoImg) { logoImg.style.height = '42px'; logoImg.style.maxWidth = '145px'; }
+
+        // Enforce spacious desktop PV table typography during mobile export
+        const isDualPV = !!clone.querySelector('.pv-dual-mode');
+        clone.querySelectorAll('.pv-split-stack').forEach(s => {
+            s.style.gap = isDualPV ? '6px' : '10px';
+        });
+        clone.querySelectorAll('.pv-table').forEach(t => {
+            t.style.fontSize = isDualPV ? '11px' : '12px';
+        });
+        clone.querySelectorAll('.pv-table th').forEach(th => {
+            th.style.padding = isDualPV ? '4px 5px' : '7px 6px';
+            th.style.fontSize = isDualPV ? '10.5px' : '11.5px';
+        });
+        clone.querySelectorAll('.pv-table th.col-lbl').forEach(th => {
+            th.style.width = '22%';
+            th.style.fontSize = isDualPV ? '10px' : '11px';
+            th.style.paddingLeft = isDualPV ? '8px' : '10px';
+        });
+        clone.querySelectorAll('.pv-table td').forEach(td => {
+            td.style.padding = isDualPV ? '4px 5px' : '7px 6px';
+            td.style.lineHeight = isDualPV ? '1.3' : '1.45';
+        });
+        clone.querySelectorAll('.pv-table .row-label').forEach(td => {
+            td.style.fontSize = isDualPV ? '10px' : '11px';
+            td.style.paddingLeft = isDualPV ? '8px' : '10px';
+        });
+        clone.querySelectorAll('.pv-table .row-baht td').forEach(td => {
+            if (!td.classList.contains('row-label')) {
+                td.style.fontSize = isDualPV ? '11.5px' : '12.5px';
+            }
+        });
+
+        cloneWrap.appendChild(clone);
+        document.body.appendChild(cloneWrap);
+
+        const estHeight = clone.scrollHeight;
+        let safeScale = scaleVal;
+        if (widthPx * safeScale * estHeight * safeScale > 16000000) {
+            safeScale = Math.max(1.4, Math.sqrt(16000000 / (widthPx * estHeight)));
+        }
+
+        try {
+            return await html2canvas(clone, {
+                scale: safeScale,
+                backgroundColor: '#ffffff',
+                useCORS: true,
+                allowTaint: false,
+                windowWidth: 1200
+            });
+        } finally {
+            document.body.removeChild(cloneWrap);
+        }
+    }
+
+    async function saveAsImage() {
+        const btn = document.getElementById('save-btn');
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> กำลังสร้างภาพ A4...';
+        btn.disabled = true;
+
+        try {
+            const target = document.getElementById('capture-area');
+            const isSingleA4 = (reportMode === 'summary' || reportMode === 'pv');
+            const canvas = await renderElementToCanvas(target, 794, 2.5, isSingleA4);
+            const imgData = canvas.toDataURL('image/jpeg', 0.95);
+            const fileName = `FWD-SavvyPension-${currentPlan.replace('/','')}-${reportMode}-A4.jpg`;
+
+            const blob = await (await fetch(imgData)).blob();
+            const file = new File([blob], fileName, { type: 'image/jpeg' });
+
+            const wrapper = document.getElementById('report-content-wrapper');
+            wrapper.innerHTML = `
+                <div class="export-preview-box">
+                    <h2 style="margin:0; color:var(--fwd-green); font-size:20px;"><i class="fa-solid fa-circle-check"></i> สร้างภาพกราฟิก A4 เรียบร้อยแล้ว</h2>
+                    <div class="export-tip">
+                        <strong>📱 มือถือ:</strong> กดปุ่ม <b>"แชร์ / บันทึกภาพ"</b> เพื่อส่งเข้า LINE หรือแตะค้างที่รูปเพื่อบันทึก<br>
+                        <strong>💻 คอมพิวเตอร์:</strong> กดปุ่ม <b>"ดาวน์โหลดภาพ"</b> ได้ทันที
+                    </div>
+                    <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
+                        <button id="share-img-btn" class="btn-act btn-save" style="padding:10px 18px;"><i class="fa-solid fa-share-nodes"></i> แชร์ / บันทึกภาพ</button>
+                        <a href="${imgData}" download="${fileName}" class="btn-act btn-print" style="padding:10px 18px; text-decoration:none;"><i class="fa-solid fa-download"></i> ดาวน์โหลดภาพ</a>
+                        <button onclick="openBenefitTableWindow()" class="btn-act btn-close" style="padding:10px 18px;"><i class="fa-solid fa-arrow-left"></i> กลับไปดูใบเสนอราคา</button>
+                    </div>
+                    <img src="${imgData}" style="max-width:100%; height:auto; border-radius:6px; border:1px solid #CBD5E1; box-shadow:0 10px 28px rgba(0,0,0,0.14);">
+                </div>
+            `;
+
+            document.getElementById('share-img-btn').onclick = async () => {
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    try {
+                        await navigator.share({ files: [file], title: `ใบเสนอราคา FWD Savvy Pension ${currentPlan}` });
+                    } catch (e) {}
+                } else {
+                    const a = document.createElement('a');
+                    a.href = imgData;
+                    a.download = fileName;
+                    a.click();
+                }
+            };
+        } catch (err) {
+            console.error(err);
+            alert("ไม่สามารถสร้างรูปภาพได้ กรุณาลองเลือกโหมด 'Infographic A4 (1 หน้า)' แล้วลองใหม่อีกครั้ง");
+        } finally {
+            btn.innerHTML = orig;
+            btn.disabled = false;
+        }
+    }
+
+    async function saveAsPDF() {
+        const btn = document.getElementById('pdf-btn');
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> กำลังสร้าง PDF A4...';
+        btn.disabled = true;
+
+        try {
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            const pageW = pdf.internal.pageSize.getWidth();   // 210mm
+            const pageH = pdf.internal.pageSize.getHeight();  // 297mm
+
+            const age = parseInt(document.getElementById('age-input').value, 10) || 35;
+            const data = buildScheduleData(age);
+            const planName = currentPlan === '90/9' ? 'แซฟวี เพนชัน 90/9' : 'แซฟวี เพนชัน 90/60';
+            const periodTxt = periodMetaMap[currentPeriod].label;
+            const deductiblePerYr = Math.min(activeAnnualizedPremium, 300000);
+            const taxSaveYr = Math.round(deductiblePerYr * (taxBracket / 100));
+            const taxSaveTotal = taxSaveYr * data.payYears;
+
+            if (reportMode !== 'full') {
+                const target = document.getElementById('capture-area');
+                const canvas = await renderElementToCanvas(target, 794, 2.5, true);
+                const imgData = canvas.toDataURL('image/jpeg', 0.95);
+
+                const ratio = Math.min(pageW / canvas.width, pageH / canvas.height);
+                const renderW = canvas.width * ratio;
+                const renderH = canvas.height * ratio;
+                const offsetX = (pageW - renderW) / 2;
+                const offsetY = (pageH - renderH) / 2;
+                pdf.addImage(imgData, 'JPEG', offsetX, offsetY, renderW, renderH, undefined, 'FAST');
+            } else {
+                const firstPageRows = 22;
+                const nextPageRows = 35;
+                const chunks = [data.rows.slice(0, firstPageRows)];
+                for (let i = firstPageRows; i < data.rows.length; i += nextPageRows) {
+                    chunks.push(data.rows.slice(i, i + nextPageRows));
+                }
+
+                for (let pIdx = 0; pIdx < chunks.length; pIdx++) {
+                    if (pIdx > 0) pdf.addPage();
+                    const isFirst = pIdx === 0;
+                    const isLast = pIdx === chunks.length - 1;
+
+                    const pageDiv = document.createElement('div');
+                    pageDiv.className = 'report-sheet a4-page';
+
+                    let inner = '<div class="a4-main-stack">';
+                    if (isFirst) {
+                        inner += `
+                            <div class="rpt-head">
+                                <div>
+                                    <h1>ใบเสนอราคาแผนบำนาญลดหย่อนภาษี</h1>
+                                    <div class="rpt-head-sub">แบบประกัน : <strong>FWD ${planName}</strong></div>
+                                </div>
+                                <div class="rpt-logo-wrap"><img src="logo.png" alt="FWD Logo" class="rpt-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div class="rpt-brand-badge" style="display:none;">FWD</div></div>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-cell">เพศ / อายุเริ่มต้น<strong>${currentGender==='male'?'ชาย':'หญิง'} / ${age} ปี</strong></div>
+                                <div class="info-cell">ทุนประกันภัย<strong class="hl">${formatNum(sumInsured)} บาท</strong></div>
+                                <div class="info-cell">ระยะเวลาชำระเบี้ย<strong>${data.payYears} ปี (คุ้มครองถึง 90 ปี)</strong></div>
+                                <div class="info-cell">งวดการชำระ<strong>${periodTxt}</strong></div>
+                                <div class="info-cell">เบี้ยประกันต่องวด<strong class="hl">${formatNum(activePlanPremium)} บาท</strong></div>
+                                <div class="info-cell">ประหยัดภาษี (ฐาน ${taxBracket}%)<strong style="color:#059669;">~${formatNum(taxSaveYr)} บ./ปี</strong></div>
+                            </div>
+                            <div class="summary-cards">
+                                <div class="s-card orange"><div class="s-title">รวมเบี้ยชำระ</div><div class="s-val">${formatNum(data.totalPrem)} บ.</div></div>
+                                <div class="s-card green"><div class="s-title">รวมรับบำนาญ</div><div class="s-val">${formatNum(data.totalAnn)} บ.</div></div>
+                                <div class="s-card dark"><div class="s-title">ส่วนต่างสุทธิ</div><div class="s-val" style="color:#4ADE80;">+${formatNum(data.totalAnn - data.totalPrem)} บ.</div></div>
+                                <div class="s-card tax"><div class="s-title">ประหยัดภาษีรวม</div><div class="s-val">${formatNum(taxSaveTotal)} บ.</div></div>
+                            </div>
+                        `;
+                    } else {
+                        inner += `
+                            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--fwd-orange); padding-bottom:8px;">
+                                <strong style="color:var(--fwd-orange); font-size:15px;">ตารางผลประโยชน์ FWD ${planName} (ต่อ)</strong>
+                                <span style="font-size:12px; color:var(--fwd-muted);">หน้า ${pIdx + 1} / ${chunks.length}</span>
+                            </div>
+                        `;
+                    }
+
+                    const rowsHtml = chunks[pIdx].map(r => `
+                        <tr class="${r.phaseClass}">
+                            <td>${r.policyYear}</td>
+                            <td>${r.age}</td>
+                            <td>${r.prem > 0 ? formatNum(r.prem) : "-"}</td>
+                            <td>${formatNum(r.cumPrem)}</td>
+                            <td>${r.deathBen > 0 ? formatNum(r.deathBen) : "-"}</td>
+                            <td class="ann-val">${r.annVal > 0 ? formatNum(r.annVal) : "-"}</td>
+                        </tr>
+                    `).join('');
+
+                    inner += `
+                        <table class="report-table" style="font-size:11.5px;">
+                            <thead>
+                                <tr>
+                                    <th>ปีที่</th><th>อายุ</th><th>เบี้ยชำระ/ปี</th><th>เบี้ยสะสม</th><th>คุ้มครองชีวิต*</th><th>รับบำนาญ</th>
+                                </tr>
+                            </thead>
+                            <tbody>${rowsHtml}</tbody>
+                        </table>
+                    </div>`;
+
+                    if (isLast) {
+                        inner += `
+                            <div class="a4-bottom-stack">
+                                <div class="rpt-notes">
+                                    <strong>หมายเหตุ:</strong> บำนาญจ่าย 16% (อายุ 60-69), 22% (อายุ 70-79), 28% (อายุ 80-90) รวม 688% • ลดหย่อนภาษีสูงสุด 300,000 บ./ปีตามเกณฑ์กรมสรรพากร • เสียชีวิตก่อนอายุ 60 จ่าย 110% เบี้ยสะสมหรือมูลค่าเวนคืน • ช่วงรับบำนาญการันตี 15 ปีตามตารางมูลค่าปัจจุบัน
+                                </div>
+                                <div class="rpt-footer">
+                                    <div class="rpt-agent-left">
+                                        <img src="${agentImgSrc}" style="width:52px; height:52px;">
+                                        <div>
+                                            <strong style="color:var(--fwd-orange); font-size:14px;">ดูแลโดย: นฤมล คำใบ (ต๋อย)</strong><br>
+                                            <span style="font-size:12px; color:var(--fwd-slate);">ผู้จัดการขาย สำนักงานตัวแทน FWD นวนคร • ใบอนุญาต: 6901010926</span>
+                                        </div>
+                                    </div>
+                                    <div style="text-align:right; font-size:15px; font-weight:800;">📞 086-901-7235</div>
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    pageDiv.innerHTML = inner;
+                    const canvas = await renderElementToCanvas(pageDiv, 794, 2.2, true);
+                    const imgData = canvas.toDataURL('image/jpeg', 0.93);
+                    const ratio = Math.min(pageW / canvas.width, pageH / canvas.height);
+                    const renderW = canvas.width * ratio;
+                    const renderH = canvas.height * ratio;
+                    pdf.addImage(imgData, 'JPEG', (pageW - renderW) / 2, (pageH - renderH) / 2, renderW, renderH, undefined, 'FAST');
+                }
+            }
+
+            const fileName = `ใบเสนอราคา-FWD-SavvyPension-${currentPlan.replace('/','')}-A4.pdf`;
+            const pdfBlob = pdf.output('blob');
+            const file = new File([pdfBlob], fileName, { type: 'application/pdf' });
+
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                try {
+                    await navigator.share({
+                        files: [file],
+                        title: `ใบเสนอราคา FWD Savvy Pension ${currentPlan}`,
+                        text: 'รายละเอียดผลประโยชน์แผนบำนาญลดหย่อนภาษี (ขนาด A4)'
+                    });
+                } catch (e) {
+                    pdf.save(fileName);
+                }
+            } else {
+                pdf.save(fileName);
+            }
+        } catch (err) {
+            console.error(err);
+            alert("เกิดข้อผิดพลาดในการสร้าง PDF กรุณาลองใหม่อีกครั้ง");
+        } finally {
+            btn.innerHTML = orig;
+            btn.disabled = false;
+        }
+    }
+
+    /* ================= DOB & SCROLL & LINE ================= */
+    window.addEventListener('DOMContentLoaded', () => {
+        const daySel = document.getElementById('dob-day');
+        for (let i = 1; i <= 31; i++) daySel.add(new Option(i, i));
+        const yrSel = document.getElementById('dob-year');
+        const curBE = new Date().getFullYear() + 543;
+        for (let i = curBE - 18; i >= curBE - 70; i--) yrSel.add(new Option(i, i));
+    });
+
+    function handleManualAge() {
+        document.getElementById('dob-day').value = "";
+        document.getElementById('dob-month').value = "";
+        document.getElementById('dob-year').value = "";
+        document.getElementById('exact-age-display').innerText = "";
+        calculate();
+    }
+
+    function calculateAgeFromDOB() {
+        const d = document.getElementById('dob-day').value;
+        const m = document.getElementById('dob-month').value;
+        const y = document.getElementById('dob-year').value;
+        const disp = document.getElementById('exact-age-display');
+        if (!d || !m || !y) { disp.innerText = ""; return; }
+
+        const birthDate = new Date(parseInt(y, 10) - 543, parseInt(m, 10) - 1, parseInt(d, 10));
+        const today = new Date();
+        let years = today.getFullYear() - birthDate.getFullYear();
+        let months = today.getMonth() - birthDate.getMonth();
+        let days = today.getDate() - birthDate.getDate();
+        if (days < 0) { months--; days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
+        if (months < 0) { years--; months += 12; }
+
+        disp.innerText = `อายุปัจจุบัน ${years} ปี ${months} เดือน ${days} วัน`;
+        document.getElementById('age-input').value = years;
+        calculate();
+    }
+
+    window.addEventListener('scroll', () => {
+        document.getElementById('sticky-bar').classList.toggle('show', window.scrollY > 150);
+    });
+
+    function sendToLineOA() {
+        const age = document.getElementById('age-input').value || 35;
+        const gender = currentGender === 'male' ? 'ชาย' : 'หญิง';
+        const sum = formatNum(sumInsured);
+        const plan = currentPlan === '90/9' ? 'FWD แซฟวี เพนชัน 90/9' : 'FWD แซฟวี เพนชัน 90/60';
+        const periodMap = { year: 'ปี', half: '6 เดือน', quarter: '3 เดือน', month: 'เดือน' };
+        const price = document.getElementById('stk-price').innerText;
+
+        const message = `สนใจแพ็กเกจ ${plan}\nเพศ: ${gender}\nอายุ: ${age} ปี\nทุนประกันหลัก: ${sum} บาท\nเบี้ยรวมประมาณ: ${price} บาท/${periodMap[currentPeriod]}`;
+        const openLine = () => {
+            alert("✅ คัดลอกข้อมูลสรุปเรียบร้อยแล้ว!\n\nเมื่อหน้าต่าง LINE เปิดขึ้นมา สามารถกด 'วาง' (Paste) เพื่อส่งให้ตัวแทนได้เลยครับ");
+            window.open("https://lin.ee/uS2hb0q", "_blank");
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(message).then(openLine).catch(() => window.open("https://lin.ee/uS2hb0q", "_blank"));
+        } else {
+            const ta = document.createElement('textarea');
+            ta.value = message;
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); openLine(); }
+            catch (e) { window.open("https://lin.ee/uS2hb0q", "_blank"); }
+            document.body.removeChild(ta);
+        }
+    }
+
+    calculate();
+</script>
+</body>
+</html>
